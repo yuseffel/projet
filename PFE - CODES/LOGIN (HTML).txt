@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="nav-link">LOGO</a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="filiere2.html" class="nav-link">FILIERES</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">LOGIN</a>
+                </li>
+                <div class="active"></div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                  <div class='button-box'>
+                      <div id='btn'></div>
+                      <button type='button'onclick='login()'class='toggle-btn'>Log in</button>
+                      <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                  </div>
+                  <form id='login' class='input-group-login'>
+                      <input type='text'class='input-field'placeholder='Email' required >
+                      <input type='password'class='input-field'placeholder='Mot de passe' required>
+                      <input type='checkbox'class='check-box'><span>Remember Password</span>
+                      <button type='submit'class='submit-btn'>log in</button>
+                  </form>
+                  <form id='register' class='input-group-register'>
+                     <input type='text'class='input-field'placeholder='Nom' required>
+                     <input type='text'class='input-field'placeholder='Prenom ' required>
+                     <input type='text'class='input-field'placeholder='numero apogee ' required>
+                     <input type='text'class='input-field'placeholder='Date de naissance' required>
+                     <input type='email'class='input-field'placeholder='Email' required>
+                     <input type='password'class='input-field'placeholder='Mot de passe' required>
+                     <input type='password'class='input-field'placeholder='Confirmer mot de passe'  required>
+                     <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                      <button type='submit'class='submit-btn'>Register</button>
+                  </form> 
+            </div>
+      </div>	       
+      <script>
+          var x=document.getElementById('login');
+          var y=document.getElementById('register');
+          var z=document.getElementById('btn');
+          function register()
+          {
+              x.style.left='-400px';
+              y.style.left='50px';
+              z.style.left='110px';
+          }
+          function login()
+          {
+              x.style.left='50px';
+              y.style.left='450px';
+              z.style.left='0px';
+          }
+      </script>
+      <script>
+          var modal = document.getElementById('login-form');
+          window.onclick = function(event) 
+          {
+              if (event.target == modal) 
+              {
+                  modal.style.display = "none";
+              }
+          }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+        
+    
+    
+    
+            
+    
+</body>
+</html>

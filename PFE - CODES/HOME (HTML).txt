@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/96dcb489df.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <header>
+			<nav class="navbar container">
+				<a href="index.html" class="nav-link">LOGO</a>
+				<ul class="nav-list">
+					<li class="nav-item">
+						<a href="home.html" class="nav-link">HOME</a>
+					</li>
+					<li class="nav-item">
+						<a href="filiere2.html" class="nav-link">FILIERES</a>
+					</li>
+					<li class="nav-item">
+						<a href="contact.html" class="nav-link">CONTACT</a>
+					</li>
+					<li class="nav-item">
+						<a href="login.html" class="nav-link">LOGIN</a>
+					</li>
+					<div class="active"></div>
+				</ul>
+			</nav>
+		</header>	
+        <section id="container">
+            <div class="container-text">
+                <h1>L'éducation est un passport pour l'avenir car demain appartient à ceux qui s'y sont préparés aujourd'hui.</h1>
+            </div>
+          </section> 
+      
+          <!-- section a propos -->
+           <section id="a-propos">
+              <div>
+                  <p class="tittle-section">Présentation</p>
+                  <div class="description-photo">
+                    <div class="desc">
+                        Notre site ".............." a été crée a fin de donner un coup de main
+                        pour faciliter leurs études et arrondir les ressources aux étudiant du cycle 
+                        licence fondamentales dans la faculté Abdelmalek Essadi Tetouan et qui sont 
+                        inscrit dans les différentes filières suivantes :  
+                        <ul>
+                            <li>Sciences Mathématiques Appliquées (SMA).</li>
+                            <li>Sciences Mathématiques Informatiques (SMI).</li>
+                            <li>Sciences de la Matière Physique (SMP).</li>
+                            <li>Sciences de la Matière Chimie (SMC).</li>
+                            <li>Sciences de la Vie (SVI).</li>
+                            <li>Sciences de la Terre et de l'Univers (STU).</li>
+                         </ul>                                                 
+                    </div>
+                      <img id="img" src="graduation.jpg" >
+                  </div>
+              </div>
+              <p class="tittle-section">Suivez-nous</p>
+              <div class="follow">
+                <div class="icons">
+                    <a href="#" class="icon icon--instagram">
+                      <i class="ri-instagram-line"></i>
+                    </a>
+                    <a href="#" class="icon icon--twitter">
+                      <i class="ri-twitter-line"></i>
+                    </a>
+                    <a href="#" class="icon icon--facebook">
+                      <i class="ri-facebook-line"></i>
+                    </a>
+                    <a href="#" class="icon icon--github">
+                      <i class="ri-github-line"></i>
+                    </a>
+                  </div>
+                </div>
+          </section>       
+</body>
+</html>

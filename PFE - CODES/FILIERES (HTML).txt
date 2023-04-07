@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>03</title>
+    <link rel="stylesheet" href="filiere2.css" />
+  </head>
+  <body>
+    <header>
+        <nav class="navbar container">
+            <a href="index.html" class="nav-link">LOGO</a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="home.html" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="filiere2.html" class="nav-link">FILIERES</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">LOGIN</a>
+                </li>
+                <div class="active"></div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+      <h1 style="color: #4facfe" >Les filières:</h1>
+      <section>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="math.jpg" alt="">
+
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(SMA)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences Mathématiques Appliquées (SMA):</h2>
+            <p>
+              La filière Mathématiques appliquées est centrée sur les mathématiques 
+              (en particulier, les probabilités et les statistiques) et complétée par cours 
+              d’ouverture dans d’autres domaines de mathématiques, ainsi que des enseignements 
+              optionnels en économie, en finance, en informatique et dans d’autres sciences.
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_SMA_2014.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="info.jpg" alt="">
+  
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(SMI)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences Mathématiques Informatiques (SMI):</h2>
+            <p>
+              La filière Mathématiques Informatique donne une information de base 
+             à prédominance informatique avec un enseignement des modules de mathématiques 
+             et de physique, Les deux premiers semestres constituent un tronc commun avec la
+             filière Licence "Mathématiques", l'enseignement dans cette filière est dispensé 
+             sous forme de modules disciplinaires (techniques informatiques, techniques quantitatives, ...).
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_SMI_2014.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="phy.jpg" alt="">
+
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(SMP)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences de la Matière Physique (SMP) :</h2>
+            <p>
+              La filière Sciences de la Matière Physique a pour objectif d’assurer une formation
+            de base pluridisciplinaire en Physique, Chimie, Mathématiques et Informatique avec un profil 
+              de Physique qui se dégage dans les deux derniers semestres du cycle.                 
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_SMP_2014.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="chimie.jpg" alt="">
+
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(SMC)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences de la Matière Chimie (SMC) :</h2>
+            <p>
+              La filière Sciences de la Matière Chimie (SMC), dispense une formation générale 
+             qui couvre les domaines de chimie physique, organique, analytique et minérale. 
+             Les quatre premiers semestres de cette filière présentent un enseignement équilibré 
+             entre les mathématiques, la physique et la chimie ce qui permet à l’étudiant, d’acquérir 
+             des connaissances scientifiques fondamentales et transversales indispensables à maitriser 
+             dans le domaine de la chimie.
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_SMC_2014_0.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="sv.jpg" alt="">
+
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(SVI)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences de la Vie (SVI) :</h2>
+            <p>
+              La filière Sciences de la Vie offre à l’étudiant une formation générale dans 
+              le domaine de la Biologie. Elle repose sur un enseignement modulaire théorique et pratique 
+              portant sur les principales disciplines biologiques fondamentales telles que la Biologie 
+              Cellulaire et moléculaire, la Biologie des Organismes, la Microbiologie, la Génétique, 
+              l’Ecologie et la Physiologie Animale et Végétale. Cet enseignement est complété également 
+              par des modules de Géologie, Chimie, Physique, Mathématiques et Langes-Communication.
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_SVI_2014.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+        <article class="blog-post">
+          <div class="blog-post__img">
+              <img src="st.jpg" alt="">
+
+          </div>
+          <div class="blog-post__info">
+            <div class="blog-post__fili">
+              <span>(STU)</span>
+            </div>
+            <h2 class="blog-post__title">Sciences de la Terre et de l'Univers (STU):</h2>
+            <p>
+              La filière Sciences de la Terre et de l’Univers (STU) constituent un champ de savoir 
+             et un ensemble de pratiques qui s’enracinent dans l’histoire naturelle. En se centrant sur des problèmes
+             et des objets spécifiques, elles se sont développées en se diversifiant en de nombreuses disciplines 
+             et sous-disciplines : astronomie, cosmologie, géologie, climatologie, etc. Certaines sont porteuses de 
+             débats sur les relations science-métaphysique et science-religions, d’autres se voient de plus en plus 
+             associées à des questions sociétales (environnement, risques naturels, etc.).
+            </p>
+            <a href="http://www.fst.ac.ma/site/sites/default/files/Filiere_STU_2014_0.pdf" class="blog-post__cta">Read more</a>
+          </div>
+        </article>
+  </main>
+</body>
+</html>
+     </section>
+        
+      </main>
+  </body>
+</html>  
