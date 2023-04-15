@@ -12,7 +12,7 @@ html {
 }
 #container {
     height: 50vh;
-    background: linear-gradient(rgba(0,0,0,0.7),#066aa4ba),url("/assets/photos/study1.jpg");
+    background: linear-gradient(rgba(0,0,0,0.7),#a0a2a3ba),url("/assets/photos/study1.jpg");
     background-size: cover;
     padding: 10px 10%;
 }
@@ -51,7 +51,7 @@ html {
     margin-top: 50px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #675afe;
+    color: rgb(243, 141, 7);
     font-size: 25px;
 }
 
