@@ -1,27 +1,29 @@
-<app-navbar></app-navbar>
+<app-navbar></app-navbar> 
 <body>
     <div class="wrapper">
-      <div class="title">Login Form</div>
+      <div class="title">Se connecter</div>
       <form action="#">
         <div class="field">
-          <input type="text" required>
-          <label>Email Address</label>
+          <input type="email" required>
+          <label>Adresse email</label>
         </div>
         <div class="field">
           <input type="password" required>
-          <label>Password</label>
+          <label>Mot de passe</label>
         </div>
         <div class="content">
           <div class="checkbox">
             <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
+            <label for="remember-me">Se souvenir de moi</label>
           </div>
-          <div class="pass-link"><a href="#">Forgot password?</a></div>
+          <div class="pass-link"><a href="#">Mot de passe oublié ?</a></div>
         </div>
         <div class="field">
-          <input type="submit" value="Login">
+          <input type="submit" value="Se Connecter">
         </div>
-        <div class="signup-link">Not a member? <a routerLink="/register">Signup now</a></div>
+        <div class="signup-link"> <a routerLink="/register">S'inscrire</a></div>
       </form>
     </div>
-  </body>
+   
+  
+</body>

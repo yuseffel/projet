@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: center;
     /*background: url("p3.jpeg") no-repeat center center/cover;*/
+    background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
 }
 
 .container1 form{
@@ -25,10 +26,12 @@
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     flex-wrap: wrap;
+    background-color: white;
+
 }
 
 .container1 form h1{
-    color: #fff;
+    color: rgb(121,120,120);
     font-weight: 500;
     margin-top: 20px;
     width: 500px;
@@ -44,11 +47,11 @@
     font-size: 15px;
     margin-bottom: 10px;
     background: none;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #FFA500;
 }
 
 .container1 form input::placeholder{
-    color: #ddd;
+    color: rgb(121,120,120);
 }
 
 .container1 form #lastName,
@@ -57,7 +60,7 @@
 }
 
 .container1 form h4{
-    color: #fff;
+    color: rgb(121,120,120);
     font-weight: 300;
     width: 600px;
     margin-top: 20px;
@@ -66,8 +69,8 @@
 .container1 form textarea{
     background: none;
     border: none;
-    border-bottom: 2px solid #fff;
-    color: #fff;
+    border-bottom: 2px solid #FFA500;
+    color: black;
     font-weight: 200;
     font-size: 15px;
     padding: 10px;
@@ -88,12 +91,12 @@ textarea::-webkit-scrollbar-thumb{
 
 .container1 form #button{
     border: none;
-    background: #fff;
+    background: #FFA500;
     border-radius: 5px;
     margin-top: 20px;
     font-weight: 600;
     font-size: 20px;
-    color: #333;
+    color: white;
     width: 100px;
     padding: 0;
     margin-right: 500px;
@@ -103,4 +106,5 @@ textarea::-webkit-scrollbar-thumb{
 
 .container1 form #button:hover{
     opacity: 0.7;
+    background-image: linear-gradient(to right, #FFA500  0%, rgb(121,120,120) 100%);
 }

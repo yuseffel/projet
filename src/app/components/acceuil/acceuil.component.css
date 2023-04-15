@@ -10,6 +10,9 @@
 html {
     scroll-behavior: smooth;
 }
+section{
+	margin: 0% 1% 0% 1%;
+}
 #container {
     height: 50vh;
     background: linear-gradient(rgba(0,0,0,0.7),#a0a2a3ba),url("/assets/photos/study1.jpg");
@@ -59,10 +62,12 @@ html {
 	display: flex;
     justify-content: space-between;
     margin-top: 40px;
-    height: 350px;
+    height: 350px;	
 }
+
 #img{
 	border-radius: 20px;
+	
 }
 #list{
 	margin-top: 3%;
@@ -74,8 +79,9 @@ html {
     width: 60%;
 	text-indent: 20px;
 	text-emphasis-position: 10%;
-	margin-top: 60px;
-	font-size: 150%;
+	margin-top: 50px;
+	font-size: 120%;
+	margin-left: 2%
 
 
 }
