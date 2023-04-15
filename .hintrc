@@ -35,7 +35,8 @@
           "-webkit-tap-highlight-color",
           "-webkit-overflow-scrolling",
           "text-decoration-skip-ink",
-          "overflow-anchor"
+          "overflow-anchor",
+          "user-select"
         ]
       }
     ],
