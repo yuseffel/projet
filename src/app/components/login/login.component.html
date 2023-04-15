@@ -1,56 +1,27 @@
 <app-navbar></app-navbar>
-<main style="background-image: url(assets/photos/p3.jpeg)">
-    <div id='login-form'class='login-page'>
-        <div class="form-box">
-              <div class='button-box'>
-                  <div id='btn'></div>
-                  <button type='button'  (click)="login()" class='toggle-btn'>Log in</button>
-                  <button type='button'onclick='register()'class='toggle-btn'>Register</button>
-              </div>
-              <form id='login' class='input-group-login'>
-                  <input type='text'class='input-field'placeholder='Email' required >
-                  <input type='password'class='input-field'placeholder='Mot de passe' required>
-                  <input type='checkbox'class='check-box'><span>Remember Password</span>
-                  <button type='submit'class='submit-btn'>log in</button>
-              </form>
-              <form id='register' class='input-group-register'>
-                 <input type='text'class='input-field'placeholder='Nom' required>
-                 <input type='text'class='input-field'placeholder='Prenom ' required>
-                 <input type='text'class='input-field'placeholder='numero apogee ' required>
-                 <input type='text'class='input-field'placeholder='Date de naissance' required>
-                 <input type='email'class='input-field'placeholder='Email' required>
-                 <input type='password'class='input-field'placeholder='Mot de passe' required>
-                 <input type='password'class='input-field'placeholder='Confirmer mot de passe'  required>
-                 <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
-                  <button type='submit'class='submit-btn'>Register</button>
-              </form> 
+<body>
+    <div class="wrapper">
+      <div class="title">Login Form</div>
+      <form action="#">
+        <div class="field">
+          <input type="text" required>
+          <label>Email Address</label>
         </div>
-  </div>	       
-  <script>
-      var x=document.getElementById('login');
-      var y=document.getElementById('register');
-      var z=document.getElementById('btn');
-      function register()
-      {
-          x.style.left='-400px';
-          y.style.left='50px';
-          z.style.left='110px';
-      }
-      function login()
-      {
-          x.style.left='50px';
-          y.style.left='450px';
-          z.style.left='0px';
-      }
-  </script>
-  <script>
-      var modal = document.getElementById('login-form');
-      window.onclick = function(event) 
-      {
-          if (event.target == modal) 
-          {
-              modal.style.display = "none";
-          }
-      }
-  </script>
-</main>
+        <div class="field">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="content">
+          <div class="checkbox">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+          </div>
+          <div class="pass-link"><a href="#">Forgot password?</a></div>
+        </div>
+        <div class="field">
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">Not a member? <a routerLink="/register">Signup now</a></div>
+      </form>
+    </div>
+  </body>
