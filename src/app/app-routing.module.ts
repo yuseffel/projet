@@ -4,13 +4,15 @@ import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { FilieresComponent } from './components/filieres/filieres.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { RegistrerComponent } from './components/registrer/registrer.component';
 
 const routes: Routes = [
 
   {path:'Acceuil', component:AcceuilComponent,pathMatch:'full'},
   {path: '', component: FilieresComponent},
   {path:'login', component:LoginComponent},
-  {path:'contact', component:ContactComponent}
+  {path:'contact', component:ContactComponent},
+  {path:'register', component:RegistrerComponent},
 ];
 
 @NgModule({
