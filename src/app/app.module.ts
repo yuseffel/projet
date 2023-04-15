@@ -9,6 +9,7 @@ import { FilieresComponent } from './components/filieres/filieres.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
+import { RegistrerComponent } from './components/registrer/registrer.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AcceuilComponent } from './components/acceuil/acceuil.component';
     FilieresComponent,
     ContactComponent,
     LoginComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    RegistrerComponent
   ],
   imports: [
     BrowserModule,
