@@ -5,7 +5,7 @@
 	margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 html {
     scroll-behavior: smooth;
@@ -29,7 +29,7 @@ html {
     color: #fff;
     font-size: 56px;
     text-transform: capitalize;
-    font-family: 'Kaushan Script', cursive;
+    font-family:'Poppins', sans-serif;
     text-align: center;
 }
 
@@ -67,7 +67,7 @@ html {
 #list{
 	margin-top: 3%;
 	margin-left: 6%;
-	font-family:'Kaushan Script' ,cursive;
+	font-family:'Poppins', sans-serif;
 	list-style: circle;	
 }
 .description-photo .desc {
@@ -87,7 +87,7 @@ html {
 
 
 .follow {
-	font-family: 'Poppins', sans-serif;
+	font-family:'Poppins', sans-serif;
 	display: grid;
 	height: 10vh;
     place-items: center;
