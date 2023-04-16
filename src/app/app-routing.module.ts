@@ -8,8 +8,8 @@ import { RegistrerComponent } from './components/registrer/registrer.component';
 
 const routes: Routes = [
 
-  {path:'Acceuil', component:AcceuilComponent,pathMatch:'full'},
-  {path: '', component: FilieresComponent},
+  {path:'', component:AcceuilComponent,pathMatch:'full'},
+  {path: 'filieres', component: FilieresComponent},
   {path:'login', component:LoginComponent},
   {path:'contact', component:ContactComponent},
   {path:'register', component:RegistrerComponent},
