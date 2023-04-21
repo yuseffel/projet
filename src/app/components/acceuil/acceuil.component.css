@@ -10,8 +10,8 @@
 html {
     scroll-behavior: smooth;
 }
-section{
-	margin: 0% 1% 0% 1%;
+.presentation{
+	margin: 0% 3% 0% 3%;
 }
 #container {
     height: 50vh;
@@ -95,7 +95,7 @@ section{
 .follow {
 	font-family:'Poppins', sans-serif;
 	display: grid;
-	height: 10vh;
+	height: 15vh;
     place-items: center;
 	
 
