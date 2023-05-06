@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'filieres', component: FilieresComponent},
   {path:'login', component:LoginComponent},
   {path:'contact', component:ContactComponent},
-  {path:'register', component:RegistrerComponent},
+  {path:'registrer', component:RegistrerComponent},
 ];
 
 @NgModule({

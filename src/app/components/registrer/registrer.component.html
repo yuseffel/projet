@@ -3,31 +3,31 @@
     <div class="container">
       <div class="title">S'inscrire</div>
       <div class="content">
-        <form action="#">
+        <form action="#" (ngSubmit)="addregisterData()">
           <div class="user-details">
             <div class="input-box">
               <span class="details">Nom </span>
-              <input type="text" placeholder="Entrer votre nom" required>
+              <input type="text" placeholder="Entrer votre nom" required id="nom" name="nom" [(ngModel)]="registrer.nom">
             </div>
             <div class="input-box">
               <span class="details">Prénom</span>
-              <input type="text" placeholder="Entrer votre prénom" required>
+              <input type="text" placeholder="Entrer votre prénom" required id="prenom" name="prenom" [(ngModel)]="registrer.prenom">
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="email" placeholder="Entrer votre email" required>
+              <input type="email" placeholder="Entrer votre email" required id="email" name="email" [(ngModel)]="registrer.email">
             </div>
             <div class="input-box">
               <span class="details">Numéro apogée</span>
-              <input type="number" placeholder="Entrer votre numéro apogée" required>
+              <input type="number" placeholder="Entrer votre numéro apogée" required id="num" name="num" [(ngModel)]="registrer.num">
             </div>
             <div class="input-box">
               <span class="details">Mot de passe</span>
-              <input type="password" placeholder="Entrer votre mot de passe" required>
+              <input type="password" placeholder="Entrer votre mot de passe" required id="motdepass" name="motdepass" [(ngModel)]="registrer.motdepass">
             </div>
             <div class="input-box">
               <span class="details">Confirmer mot de passe</span>
-              <input type="password" placeholder="Confirmer votre mot de passe" required>
+              <input type="password" placeholder="Confirmer votre mot de passe" required id="cfmotpass" name="cfmotpass"  [(ngModel)]="registrer.cfmotpass" >
             </div>
           </div>
           <div class="gender-details">
