@@ -16,7 +16,7 @@ body{
 }
 ::selection{
   background: #FFA500;
-  color: #fff;
+  color:#fff;
 }
 .wrapper{
   width: 500px;
