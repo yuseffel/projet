@@ -1,31 +1,39 @@
-<header>
-  <app-navbar></app-navbar>
-</header>
-<body>
-    <div class="wrapper">
-      <div class="title">Se connecter</div>
-      <form action="#">
-        <div class="field">
-          <input type="email" required>
-          <label>Adresse email</label>
-        </div>
-        <div class="field">
-          <input type="password" required>
-          <label>Mot de passe</label>
-        </div>
-        <div class="content">
-          <div class="checkbox">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Se souvenir de moi</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Se connecter</title>
+</head>
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+  <body>
+      <div class="wrapper">
+        <div class="title">Se connecter</div>
+        <form action="#">
+          <div class="field">
+            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+            <label>Adresse email</label>
           </div>
-          <div class="pass-link"><a href="#">Mot de passe oublié ?</a></div>
-        </div>
-        <div class="field">
-          <input type="submit" value="Se Connecter">
-        </div>
-        <div class="signup-link"> <a routerLink="/registrer">S'inscrire</a></div>
-      </form>
-    </div>
-   
-  
-</body>
+          <div class="field">
+            <input type="password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+            <label>Mot de passe</label>
+          </div>
+          <div class="content">
+            <div class="checkbox">
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Se souvenir de moi</label>
+            </div>
+            <div class="pass-link"><a href="#">Mot de passe oublié ?</a></div>
+          </div>
+          <div class="field">
+            <input type="submit" value="Se Connecter">
+          </div>
+          <div class="signup-link"> <a routerLink="/registrer">S'inscrire</a></div>
+        </form>
+      </div>
+    
+ </body>
+</html>

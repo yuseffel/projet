@@ -1,14 +1,13 @@
-import { Component} from '@angular/core';
-import { StudentService } from 'src/app/Student.service';
+import { Component } from '@angular/core';
+import { StudentService } from '../../Student.service';
 import { NgForm } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-registrer',
-  templateUrl: './registrer.component.html',
-  styleUrls: ['./registrer.component.css']
+  selector: 'app-tableau',
+  templateUrl: './tableau.component.html',
+  styleUrls: ['./tableau.component.css']
 })
-export class RegistrerComponent  {
+export class TableauComponent {
   title = 'studentdashboard';
 
   studentDetails = null as any;
@@ -21,7 +20,7 @@ export class RegistrerComponent  {
     cfmotpasse :"",
   }
 
-  constructor(private studentService: StudentService, private toastr:ToastrService) {
+  constructor(private studentService: StudentService) {
     this.getStudentsDetails();
   }
 
@@ -31,11 +30,9 @@ export class RegistrerComponent  {
         console.log(resp);
         registerForm.reset();
         this.getStudentsDetails();
-        this.toastr.success("Votre inscription est bien enregistré");
       },
       (err) => {
         console.log(err);
-        this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
       }
     );
   }
@@ -78,5 +75,6 @@ export class RegistrerComponent  {
       }
     );
   }
-}
 
+
+}

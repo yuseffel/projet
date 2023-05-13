@@ -9,7 +9,16 @@ import { LoginComponent } from './components/login/login.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule}from '@angular/common/http';
+import { HttpClientModule }from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
+import { TableauComponent } from './components/tableau/tableau.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -19,15 +28,25 @@ import {HttpClientModule}from '@angular/common/http';
     ContactComponent,
     LoginComponent,
     AcceuilComponent,
-    RegistrerComponent
+    RegistrerComponent,
+    TableauComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
    HttpClientModule,
+   CommonModule,
+   BrowserAnimationsModule, 
+   ToastrModule.forRoot(),
+
+   
+
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
+

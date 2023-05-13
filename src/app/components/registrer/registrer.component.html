@@ -1,57 +1,55 @@
-<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrement</title>
+</head>
+<header>
+  <app-navbar></app-navbar>
+
+</header>
 <body>
-    <div class="container">
-      <div class="title">S'inscrire</div>
-      <div class="content">
-        <form action="#" (ngSubmit)="addregisterData()">
-          <div class="user-details">
-            <div class="input-box">
-              <span class="details">Nom </span>
-              <input type="text" placeholder="Entrer votre nom" required id="nom" name="nom" [(ngModel)]="registrer.nom">
-            </div>
-            <div class="input-box">
-              <span class="details">Prénom</span>
-              <input type="text" placeholder="Entrer votre prénom" required id="prenom" name="prenom" [(ngModel)]="registrer.prenom">
-            </div>
-            <div class="input-box">
-              <span class="details">Email</span>
-              <input type="email" placeholder="Entrer votre email" required id="email" name="email" [(ngModel)]="registrer.email">
-            </div>
-            <div class="input-box">
-              <span class="details">Numéro apogée</span>
-              <input type="number" placeholder="Entrer votre numéro apogée" required id="num" name="num" [(ngModel)]="registrer.num">
-            </div>
-            <div class="input-box">
-              <span class="details">Mot de passe</span>
-              <input type="password" placeholder="Entrer votre mot de passe" required id="motdepass" name="motdepass" [(ngModel)]="registrer.motdepass">
-            </div>
-            <div class="input-box">
-              <span class="details">Confirmer mot de passe</span>
-              <input type="password" placeholder="Confirmer votre mot de passe" required id="cfmotpass" name="cfmotpass"  [(ngModel)]="registrer.cfmotpass" >
-            </div>
+  <div class="container">
+    <div class="title">S'inscrire</div>
+    <div class="content">
+      <form action="#" #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nom </span>
+            <input type="text" placeholder="Entrer votre nom" #nom (ngModel)="nom" name="nom" id="nom" >
           </div>
-          <div class="gender-details">
-            <input type="radio" name="gender" id="dot-1">
-            <input type="radio" name="gender" id="dot-2">
-            <input type="radio" name="gender" id="dot-3">
-            <span class="gender-title">Genre</span>
-            <div class="category">
-              <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">Professeur</span>
-            </label>
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Etudiant</span>
-            </label>
-            </div>
+          <div class="input-box">
+            <span class="details">Prénom</span>
+            <input type="text" placeholder="Entrer votre prénom" #prenom (ngModel)="prenom" name="prenom" id="prenom">
           </div>
-          <div class="button">
-            <input type="submit" value="S'inscrire">
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Entrer votre email" #email (ngModel)="email" name="email" id="email">
           </div>
-          <div class="signup-link"> <a routerLink="/login">Se connecter</a></div>
-        </form>
-      </div>
+          <div class="input-box">
+            <span class="details">Numéro apogée</span>
+            <input type="number" placeholder="Entrer votre numéro apogée" #num (ngModel)="num" name="num" id="num">
+          </div>
+          <div class="input-box">
+            <span class="details">Mot de passe</span>
+            <input type="password" placeholder="Entrer votre mot de passe" #motdepasse (ngModel)="motdepasse" name="motdepasse" id="motdepasse">
+          </div>
+          <div class="input-box">
+            <span class="details">Confirmer mot de passe</span>
+            <input type="password" placeholder="Confirmer votre mot de passe" #cfmotpasse (ngModel)="cfmotpasse" name="cfmotpasse" id="cfmotpasse">
+          </div>
+        </div>
+        <div class="button" >
+          <input type="submit"  value="S'inscrire">
+        </div>
+        <div class="signup-link"> <a routerLink="/login">Se connecter</a></div>
+      </form>
+      
     </div>
+  </div>
+
   
-  </body>
+</body>
+</html>
