@@ -9,25 +9,26 @@
 }
 .navbar-light .navbar-nav .nav-link.active-link
 {
-    color: white;
+    color: rgb(121,120,120);
     text-decoration: underline;
 	font-weight: bold;
 
 }
 .container-fluid{
-	background-color: #FFA500;
+
+    background-color: #FFA500;
 	font-size: 20px;
 	font-family:'Poppins', sans-serif;
-	height: 5%;
 	padding-block: 0.5rem;
 	display: flex;
 	max-width: 98rem;
 	margin-inline: auto;
-	padding-inline: 1.5rem;
+	padding-inline: 1rem;
 	margin-top: -0.5%;
+	margin-bottom: -0.6%;
+
 
 }
 a:hover{
 	font-style: italic;
-	font-weight: bold;
 }
