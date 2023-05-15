@@ -14,7 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { TableauComponent } from './components/tableau/tableau.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule } from '@angular/material/button';
+import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 
 
 
@@ -30,18 +32,19 @@ import { TableauComponent } from './components/tableau/tableau.component';
     AcceuilComponent,
     RegistrerComponent,
     TableauComponent,
+    CFilieresComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-   HttpClientModule,
-   CommonModule,
-   BrowserAnimationsModule, 
-   ToastrModule.forRoot(),
-
-   
+    HttpClientModule,
+    CommonModule,
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(), 
+    NgbModule,
+    MatButtonModule,
 
   ],
 

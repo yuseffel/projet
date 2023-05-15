@@ -8,42 +8,22 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" routerLink="">LOGO</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/"  routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">ACCEUIL</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/filieres" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">FILIERES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/contact" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">CONTACT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">SE CONNECTER</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <nav>
+      <label class="logo">Logo</label>
+      <ul>
+         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" >ACCEUIL</a></li>
+         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/filieres" >FILIERES</a></li>
+         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/contact" >CONTACT</a></li>
+         <li>
+            <a href="#">SE CONNECTER<i class="fas fa-caret-down"></i></a>
+            <ul>
+               <li><a routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >PROFESSEUR</a></li>
+               <li><a routerLink="/registrer"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >ETUDIANT</a></li>
+            </ul>
+         </li>
+         
+      </ul>
+   </nav>
   </header>
         
     

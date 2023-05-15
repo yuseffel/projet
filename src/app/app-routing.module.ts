@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
 import { TableauComponent } from './components/tableau/tableau.component';
+import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'contact', component:ContactComponent},
   {path:'registrer', component:RegistrerComponent},
-  {path:'tableau',component:TableauComponent}
+  {path:'tableau',component:TableauComponent},
+  {path:'cfilieres',component:CFilieresComponent}
   
 ];
 

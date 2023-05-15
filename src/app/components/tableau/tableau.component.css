@@ -1,0 +1,9 @@
+.mt-5{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+
+}
+thead{
+    background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
+}

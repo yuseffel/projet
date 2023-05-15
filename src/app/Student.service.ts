@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class StudentService {
   constructor(private http: HttpClient) { }
 
-  API = 'http://localhost:8081';
+  API = 'http://localhost:8080';
 
   public registerStudent(studentData: any) {
     return this.http.post(this.API + '/registrer', studentData);
