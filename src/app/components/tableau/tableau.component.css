@@ -7,3 +7,6 @@
 thead{
     background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
 }
+table{
+    margin-top: 6px;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tableau</title>
 </head>
 <body>
     <header>
@@ -12,6 +12,7 @@
     </header>
     <main>
         <div class="mt-5">
+          <button mat-raised-button type="button"  color="accent" >Ajouter</button>
             <table class="table table-bordered">
               <thead>
                 <tr>
@@ -21,7 +22,6 @@
                   <th>Email</th>
                   <th>Mot de passe</th>
                   <th>Confirmer mot de passe</th>
-                  <th>Ajouter</th>
                   <th>Modifier</th>
                   <th>Supprimer</th>
                   
@@ -35,7 +35,6 @@
                   <td>{{student.email}}</td>
                   <td>{{student.motdepasse}}</td>
                   <td>{{student.cfmotpasse}}</td>
-                  <td><button mat-raised-button type="button" color="accent" (click)="register(student)">Ajouter</button></td>
                   <td><button mat-raised-button type="button" color="primary" data-toggle="modal" data-target="#exampleModal"(click)="edit(student)">Modifier</button></td>
                   <td><button mat-raised-button type="button" color="warn" (click)="deleteStudent(student)">Supprimer</button></td>
                 </tr>

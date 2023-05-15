@@ -3,9 +3,10 @@ import { StudentService } from '../../Student.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-tableau',
+  selector: 'app-tableau' ,
   templateUrl: './tableau.component.html',
-  styleUrls: ['./tableau.component.css']
+  styleUrls: ['./tableau.component.css'],
+  providers:[StudentService]
 })
 export class TableauComponent {
   title = 'studentdashboard';
@@ -49,6 +50,7 @@ export class TableauComponent {
     );
   }
 
+
   deleteStudent(student: any) {
     this.studentService.deleteStudent(student.rollNumber).subscribe(
       (resp) => {
@@ -61,8 +63,8 @@ export class TableauComponent {
     );
   }
 
-  edit(studuent: any){
-    this.studentToUpdate = studuent;
+  edit(student: any){
+    this.studentToUpdate = student;
   }
 
   updateStudent(){
@@ -74,6 +76,7 @@ export class TableauComponent {
         console.log(err);
       }
     );
+
   }
 
 

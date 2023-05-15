@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /*background: url("p3.jpeg") no-repeat center center/cover;*/
     background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
 }
 

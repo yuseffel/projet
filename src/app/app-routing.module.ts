@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
+import { LoginpComponent } from './components/loginp/loginp.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'contact', component:ContactComponent},
   {path:'registrer', component:RegistrerComponent},
   {path:'tableau',component:TableauComponent},
-  {path:'cfilieres',component:CFilieresComponent}
+  {path:'cfilieres',component:CFilieresComponent},
+  {path:'loginp',component:LoginpComponent}
   
 ];
 

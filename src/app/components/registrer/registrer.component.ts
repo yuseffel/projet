@@ -6,7 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-registrer',
   templateUrl: './registrer.component.html',
-  styleUrls: ['./registrer.component.css']
+  styleUrls: ['./registrer.component.css'],
+  
 })
 export class RegistrerComponent  {
   title = 'studentdashboard';

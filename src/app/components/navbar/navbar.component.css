@@ -17,7 +17,7 @@
 	padding-left: 110px;
   }
   nav{
-	height: 60px;
+	height: 61px;
 	background: #FFA500;
 	box-shadow: 0 3px 13px rgba(0,0,0,.4);
   }
@@ -36,7 +36,6 @@
 
 }
 
-
   nav ul li a{
 	color: white;
 	display: block;
@@ -52,7 +51,6 @@
   nav ul ul{
 	position: absolute;
 	top: 85px;
-
 	opacity: 0;
 	visibility: hidden;
   }
