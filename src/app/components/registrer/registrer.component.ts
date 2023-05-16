@@ -58,6 +58,7 @@ export class RegistrerComponent  {
       (resp) => {
         console.log(resp);
         this.getStudentsDetails();
+        
       },
       (err) => {
         console.log(err);

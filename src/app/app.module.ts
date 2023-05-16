@@ -8,7 +8,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { RegistrerComponent } from './components/registrer/registrer.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -49,6 +49,7 @@ import { LoginpComponent } from './components/loginp/loginp.component';
     ToastrModule.forRoot(), 
     NgbModule,
     MatButtonModule,
+    ReactiveFormsModule,
 
   ],
 
