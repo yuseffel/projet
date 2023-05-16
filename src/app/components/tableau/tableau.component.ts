@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../../Student.service';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-tableau' ,
@@ -21,7 +22,7 @@ export class TableauComponent {
     cfmotpasse :"",
   }
 
-  constructor(private studentService: StudentService) {
+  constructor(private studentService: StudentService , private toastr:ToastrService) {
     this.getStudentsDetails();
   }
 
@@ -31,9 +32,11 @@ export class TableauComponent {
         console.log(resp);
         registerForm.reset();
         this.getStudentsDetails();
+        this.toastr.success("Votre inscription est bien enregistré");
       },
       (err) => {
         console.log(err);
+        this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
       }
     );
   }
@@ -52,28 +55,33 @@ export class TableauComponent {
 
 
   deleteStudent(student: any) {
-    this.studentService.deleteStudent(student.rollNumber).subscribe(
+    this.studentService.deleteStudent(student.num).subscribe(
       (resp) => {
         console.log(resp);
         this.getStudentsDetails();
+        this.toastr.success("Etudiant est bien supprimé");
       },
       (err) => {
         console.log(err);
+        this.toastr.error("Etudiant n'est pas supprimé");
       }
     );
   }
 
-  edit(student: any){
-    this.studentToUpdate = student;
+  edit(studuent: any){
+    this.studentToUpdate = studuent;
   }
 
   updateStudent(){
     this.studentService.updateStudents(this.studentToUpdate).subscribe(
       (resp) => {
         console.log(resp);
+        this.toastr.success("Modifier avec succee");
       },
       (err) => {
         console.log(err);
+        this.toastr.error("Erreur lors de modification");
+        
       }
     );
 

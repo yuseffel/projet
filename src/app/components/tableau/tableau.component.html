@@ -11,8 +11,40 @@
       <app-navbar></app-navbar>
     </header>
     <main>
+      <div class="card" style="padding: 30px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Nom :</span>
+              <input type="text" placeholder="Entrer votre nom" #nom (ngModel)="nom" name="nom" id="nom" >
+            </div>
+            <div class="input-box">
+              <span class="details">Prénom :</span>
+              <input type="text" placeholder="Entrer votre prénom" #prenom (ngModel)="prenom" name="prenom" id="prenom">
+            </div>
+            <div class="input-box">
+              <span class="details">Email :</span>
+              <input type="email" placeholder="Entrer votre email" #email (ngModel)="email" name="email" id="email">
+            </div>
+            <div class="input-box">
+              <span class="details">Numéro apogée :</span>
+              <input type="number" placeholder="Entrer votre numéro apogée" #num (ngModel)="num" name="num" id="num">
+            </div>
+            <div class="input-box">
+              <span class="details">Mot de passe :</span>
+              <input type="password" placeholder="Entrer votre mot de passe" #motdepasse (ngModel)="motdepasse" name="motdepasse" id="motdepasse">
+            </div>
+            <div class="input-box">
+              <span class="details">Confirmer mot de passe :</span>
+              <input type="password" placeholder="Confirmer votre mot de passe" #cfmotpasse (ngModel)="cfmotpasse" name="cfmotpasse" id="cfmotpasse">
+            </div>
+          </div>
+          <div class="button" >
+            <input type="submit"  value="Ajouter">
+          </div>
+        </form>
+      </div>
         <div class="mt-5">
-          <button mat-raised-button type="button"  color="accent" >Ajouter</button>
             <table class="table table-bordered">
               <thead>
                 <tr>
@@ -41,7 +73,6 @@
               </tbody>
             </table>
           </div>
-        
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
