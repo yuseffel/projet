@@ -9,13 +9,7 @@
 	overflow: hidden;
 	user-select: none;
   }
-  nav .logo{
-	color: white;
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 65px;
-	padding-left: 110px;
-  }
+ 
   nav{
 	height: 61px;
 	background: #FFA500;
