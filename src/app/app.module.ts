@@ -18,6 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonModule } from '@angular/material/button';
 import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 import { LoginpComponent } from './components/loginp/loginp.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -38,6 +40,9 @@ import { LoginpComponent } from './components/loginp/loginp.component';
     LoginpComponent,
 
 
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { LoginpComponent } from './components/loginp/loginp.component';
     NgbModule,
     MatButtonModule,
     ReactiveFormsModule,
+    MatDialogModule
 
   ],
 

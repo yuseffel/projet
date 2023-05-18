@@ -67,7 +67,7 @@
                   <td>{{student.email}}</td>
                   <td>{{student.motdepasse}}</td>
                   <td>{{student.cfmotpasse}}</td>
-                  <td><button mat-raised-button type="button" color="primary" data-toggle="modal" data-target="#exampleModal"(click)="edit(student)">Modifier</button></td>
+                  <td><button mat-raised-button type="button" color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal"(click)="edit(student)">Modifier</button></td>
                   <td><button mat-raised-button type="button" color="warn" (click)="deleteStudent(student)">Supprimer</button></td>
                 </tr>
               </tbody>
@@ -78,52 +78,49 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Mise à jour d'un etudiant</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title" id="exampleModalLabel">Mise à jour d'un étudiant</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form #updateForm= "ngForm" (ngSubmit)="updateStudent()">
                   <div class="form-group">
                     <label for="nom">Nom :</label>
-                    <input type="text" disabled #nom (ngModel)="studentToUpdate.nom" name="nom" id="nom"
+                    <input type="text"  #nom [(ngModel)]="studentToUpdate.nom" name="nom" id="nom"
                       class="form-control" placeholder="Entrer votre Nom">
                   </div>
                   <div class="form-group">
-                    <label for="prenom">Prenom :</label>
-                    <input type="text" #prenom (ngModel)="studentToUpdate.prenom" name="prenom" id="name" class="form-control"
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" #prenom [(ngModel)]="studentToUpdate.prenom" name="prenom" id="name" class="form-control"
                       placeholder="Entrer votre Prenom">
                   </div>
                   <div class="form-group">
                     <label for="num">Numéro Apogée :</label>
-                    <input type="number" #num (ngModel)="studentToUpdate.num" name="num" id="num" class="form-control"
+                    <input type="number" #num [(ngModel)]="studentToUpdate.num" name="num" id="num" class="form-control"
                       placeholder="Entrer votre Numéro Apogée ">
                   </div>
                   <div class="form-group">
                     <label for="email">Email :</label>
-                    <input type="text" #email (ngModel)="studentToUpdate.email" name="email" id="email"
+                    <input type="text" #email [(ngModel)]="studentToUpdate.email" name="email" id="email"
                       class="form-control" placeholder="Entrer votre Email">
                   </div>
                   <div class="form-group">
                     <label for="motdepasse">Mot de passe :</label>
-                    <input type="password" #motdepasse (ngModel)="studentToUpdate.motdepasse" name="motdepasse" id="motdepasse"
+                    <input type="password" #motdepasse [(ngModel)]="studentToUpdate.motdepasse" name="motdepasse" id="motdepasse"
                       class="form-control" placeholder="Entrer votre Mot de passe">
                   </div>
                   <div class="form-group">
                     <label for="cfmotpasse">Confirmer mot de passe :</label>
-                    <input type="password" #cfmotpasse (ngModel)="studentToUpdate.cfmotpasse" name="cfmotpasse" id="cfmotpasse"
+                    <input type="password" #cfmotpasse [(ngModel)]="studentToUpdate.cfmotpasse" name="cfmotpasse" id="cfmotpasse"
                       class="form-control" placeholder="Confirmer votre Mot de passe">
                   </div>
                   <div class="form-group">
-                    <input type="submit" value="Modifier" class="btn btn-primary w-100">
+                    <input style="margin-top: 8px;" type="submit" value="Modifier" class="btn btn-warning w-100">
                   </div>
                 </form>
               </div>
             </div>
           </div>
-        </div>
-        
+        </div>      
     </main>
     
 </body>

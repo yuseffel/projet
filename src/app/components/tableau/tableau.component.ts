@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StudentService } from '../../Student.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tableau' ,
@@ -21,8 +22,9 @@ export class TableauComponent {
     motdepasse :"",
     cfmotpasse :"",
   }
+ 
 
-  constructor(private studentService: StudentService , private toastr:ToastrService) {
+  constructor(private studentService: StudentService , private toastr:ToastrService , dialog:MatDialog) {
     this.getStudentsDetails();
   }
 
@@ -59,24 +61,24 @@ export class TableauComponent {
       (resp) => {
         console.log(resp);
         this.getStudentsDetails();
-        this.toastr.success("Etudiant est bien supprimé");
+        this.toastr.success("Effacé avec succés");
       },
       (err) => {
         console.log(err);
-        this.toastr.error("Etudiant n'est pas supprimé");
+        this.toastr.error("Erreur de suppression");
       }
     );
   }
 
-  edit(studuent: any){
-    this.studentToUpdate = studuent;
+  edit(student: any){
+    this.studentToUpdate = student;
   }
 
   updateStudent(){
     this.studentService.updateStudents(this.studentToUpdate).subscribe(
       (resp) => {
         console.log(resp);
-        this.toastr.success("Modifier avec succee");
+        this.toastr.success("Modification effectuée avec succés");
       },
       (err) => {
         console.log(err);
@@ -86,6 +88,7 @@ export class TableauComponent {
     );
 
   }
+ 
 
 
 }

@@ -10,6 +10,7 @@ import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 import { LoginpComponent } from './components/loginp/loginp.component';
 
 
+
 const routes: Routes = [
 
   {path:'', component:AcceuilComponent,pathMatch:'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'registrer', component:RegistrerComponent},
   {path:'tableau',component:TableauComponent},
   {path:'cfilieres',component:CFilieresComponent},
-  {path:'loginp',component:LoginpComponent}
+  {path:'loginp',component:LoginpComponent},
+ 
   
 ];
 
