@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 import { LoginpComponent } from './components/loginp/loginp.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TableauPComponent } from './components/tableau-p/tableau-p.component';
 
 
 
@@ -38,6 +39,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TableauComponent,
     CFilieresComponent,
     LoginpComponent,
+    TableauPComponent,
 
 
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau</title>
+</head>
+<body>
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+    <main>
+      <div class="card" style="padding: 30px;">
+        <form #registerForm="ngForm" (ngSubmit)="registerProf(registerForm)">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Nom :</span>
+              <input type="text" placeholder="Entrer votre nom" #nom (ngModel)="nom" name="nom" id="nom" >
+            </div>
+            <div class="input-box">
+              <span class="details">Prénom :</span>
+              <input type="text" placeholder="Entrer votre prénom" #prenom (ngModel)="prenom" name="prenom" id="prenom">
+            </div>
+            <div class="input-box">
+              <span class="details">Email :</span>
+              <input type="email" placeholder="Entrer votre email" #email (ngModel)="email" name="email" id="email">
+            </div>
+            <div class="input-box">
+              <span class="details">Matricule :</span>
+              <input type="number" placeholder="Entrer votre matricule" #mat (ngModel)="mat" name="mat" id="mat">
+            </div>
+            <div class="input-box">
+              <span class="details">Mot de passe :</span>
+              <input type="password" placeholder="Entrer votre mot de passe" #motdepasse (ngModel)="motdepasse" name="motdepasse" id="motdepasse">
+            </div>
+          </div>
+          <div class="button" >
+            <input type="submit"  value="Ajouter">
+          </div>
+        </form>
+      </div>
+        <div class="mt-5">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Prenom</th>
+                  <th>Matricule</th>
+                  <th>Email</th>
+                  <th>Mot de passe</th>
+                  <th>Modifier</th>
+                  <th>Supprimer</th>
+                  
+                </tr>
+              </thead>
+              <tbody class="tbody" >
+                <tr *ngFor="let prof of profDetails">
+                  <td>{{prof.nom}}</td>
+                  <td>{{prof.prenom}}</td>
+                  <td>{{prof.mat}}</td>
+                  <td>{{prof.email}}</td>
+                  <td>{{prof.motdepasse}}</td>
+                  <td><button mat-raised-button type="button" color="primary" data-bs-toggle="modal" data-bs-target="#exampleModal"(click)="edit(prof)">Modifier</button></td>
+                  <td><button mat-raised-button type="button" color="warn" (click)="deleteProf(prof)">Supprimer</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Mise à jour d'un proffesseur</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form #updateForm= "ngForm" (ngSubmit)="updateProf()">
+                  <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text"  #nom [(ngModel)]="profToUpdate.nom" name="nom" id="nom"
+                      class="form-control" placeholder="Entrer votre Nom">
+                  </div>
+                  <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" #prenom [(ngModel)]="profToUpdate.prenom" name="prenom" id="name" class="form-control"
+                      placeholder="Entrer votre Prenom">
+                  </div>
+                  <div class="form-group">
+                    <label for="num">Matricule :</label>
+                    <input type="number" #mat [(ngModel)]="profToUpdate.mat" name="mat" id="mat" class="form-control"
+                      placeholder="Entrer votre Matricule ">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="text" #email [(ngModel)]="profToUpdate.email" name="email" id="email"
+                      class="form-control" placeholder="Entrer votre Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="motdepasse">Mot de passe :</label>
+                    <input type="password" #motdepasse [(ngModel)]="profToUpdate.motdepasse" name="motdepasse" id="motdepasse"
+                      class="form-control" placeholder="Entrer votre Mot de passe">
+                  </div>
+                  <div class="form-group">
+                    <input style="margin-top: 8px;" type="submit" value="Modifier" class="btn btn-warning w-100">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>      
+    </main>
+    
+</body>
+</html>
+
