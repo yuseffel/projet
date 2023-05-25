@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Prof } from './prof';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +25,10 @@ public deleteProf(id: any) {
 
 public updateProf(prof: any) {
   return this.http.put(this.API + '/updateProf', prof);
+}
+public loginStudentFromRemote(prof: Prof):Observable<any>{
+  console.log(prof)
+ return this.http.post(this.API + '/loginp', prof);
 }
 
   

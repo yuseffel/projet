@@ -12,13 +12,13 @@
   <body>
       <div class="wrapper">
         <div class="title">Se connecter</div>
-        <form action="#">
+        <form #loginform="ngForm" (ngSubmit)="loginProf()" action="#">
           <div class="field">
-            <input type="email" required [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+            <input type="email" [(ngModel)]="prof.email" id="email" name="email" >
             <label>Adresse email</label>
           </div>
           <div class="field">
-            <input type="password" required [(ngModel)]="password" [ngModelOptions]="{standalone: true}" >
+            <input type="password" [(ngModel)]="prof.motdepasse" id="motdepasse" name="motdepasse" >
             <label>Mot de passe</label>
           </div>
           <div class="content">
