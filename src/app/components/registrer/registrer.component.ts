@@ -1,5 +1,5 @@
 import { Component} from '@angular/core';
-import { StudentService } from 'src/app/Student.service';
+import { StudentService } from 'src/app/StudentService.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 

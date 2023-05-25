@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StudentService } from '../../Student.service';
+import { StudentService } from '../../StudentService.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';

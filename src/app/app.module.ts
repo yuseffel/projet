@@ -27,6 +27,8 @@ import { TableauPComponent } from './components/tableau-p/tableau-p.component';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { TableauPComponent } from './components/tableau-p/tableau-p.component';
     CFilieresComponent,
     LoginpComponent,
     TableauPComponent,
+   
+
 
 
 
@@ -57,8 +61,7 @@ import { TableauPComponent } from './components/tableau-p/tableau-p.component';
     NgbModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatDialogModule
-
+    MatDialogModule,
   ],
 
   providers: [],

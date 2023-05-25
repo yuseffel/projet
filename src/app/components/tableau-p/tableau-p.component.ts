@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { ProfService } from 'src/app/prof.service';
+import { ProfService } from 'src/app/ProfService.service';
 
 @Component({
   selector: 'app-tableau-p',

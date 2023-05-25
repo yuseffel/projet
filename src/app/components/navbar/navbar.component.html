@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <img src="../../../assets/photos/IMG_6409.jpg" width="130px" height="70px" id=logo alt="Logo image" style="margin-left: 70px;" />
-      <ul>
-         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" >ACCEUIL</a></li>
-         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/filieres" >FILIERES</a></li>
-         <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/contact" >CONTACT</a></li>
-         <li>
-            <a href="#">SE CONNECTER<i class="fas fa-caret-down"></i></a>
-            <ul>
-               <li><a routerLink="/loginp" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >PROFESSEUR</a></li>
-               <li><a routerLink="/login"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >ETUDIANT</a></li>
-            </ul>
-         </li>
-         
-      </ul>
-   </nav>
-  </header>
-        
-    
-</body>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Responsive Drop-down Menu Bar</title>
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            <img src="../../../assets/photos/IMG_6409.jpg" width="130px" height="70px" id=logo alt="Logo image" style="margin-left: 70px;" />
+         </div>
+         <label for="btn" class="icon">
+         <span class="fa fa-bars"></span>
+         </label>
+         <input type="checkbox" id="btn">
+         <ul>
+            <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" >ACCEUIL</a></li>
+            <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/filieres" >FILIERES</a></li>
+            <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/contact" >CONTACT</a></li>
+            <li>
+               <label for="btn-1" class="show">SE CONNECTER</label>
+               <a href="#">SE CONNECTER</a>
+               <input type="checkbox" id="btn-1">
+               <ul>
+                  <li><a routerLink="/loginp" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >PROFESSEUR</a></li>
+                  <li><a routerLink="/login"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >ETUDIANT</a></li>
+               </ul>
+            </li> 
+         </ul>
+      </nav>
+      <script>
+         $('.icon').click(function(){
+           $('span').toggleClass("cancel");
+         });
+      </script>
+   </body>
 </html>

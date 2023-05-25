@@ -1,48 +1,37 @@
-import { Component } from '@angular/core';
-import {HttpClient}from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { StudentService } from 'src/app/StudentService.service';
+import { Student } from 'src/app/student';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-    email: string ="";
-  password: string ="";
- 
- 
-  constructor(private router: Router,private http: HttpClient) {}
- 
- 
-  Login() {
-    console.log(this.email);
-    console.log(this.password);
-    let bodyData = {
-      email: this.email,
-      password: this.password,
-    };
-        this.http.post("http://localhost:8080/login", bodyData).subscribe(  (resultData: any) => {
-        console.log(resultData);
-        if (resultData.message == "Email not exits")
-        {
-      
-          alert("Email not exits");
-    
-        }
-        else if(resultData.message == "Login Success")
-    
-         {
-          this.router.navigateByUrl('/home');
-        }
-        else
-        {
-          alert("Incorrect Email and Password not match");
-        }
- 
-      });
-    }
-    
+export class LoginComponent implements OnInit {
+   student: Student = new Student();
+
+  constructor(private studentService :StudentService, private toastr:ToastrService){
+  }
+
+  ngOnInit(): void {  
+  }
+
+  loginStudent(){
+    console.log(this.student);
+    this.studentService.loginStudentFromRemote(this.student).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.toastr.success("Connectée avec succes");
+      },
+      (err) => {
+        console.log(err);
+        this.toastr.error("Erreur dans votre . Veuillez réessayer");
+      }
+    );
+  }
+   
   }
   
     
