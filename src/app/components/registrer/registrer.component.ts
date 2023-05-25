@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { StudentService } from 'src/app/StudentService.service';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Student } from 'src/app/student';
 
@@ -40,6 +40,7 @@ export class RegistrerComponent  {
         this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
       }
     );
+
   }
 
   getStudentsDetails() {
@@ -81,7 +82,7 @@ export class RegistrerComponent  {
       }
     );
   }
-  student:Student = new Student();
-  confirmPassword:any;
+
+  cfmotpasse:any;
 }
 

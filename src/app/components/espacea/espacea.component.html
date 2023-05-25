@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <nav>
+       <div class="logo">
+          <img src="../../../assets/photos/IMG_6409.jpg" width="130px" height="70px" id=logo alt="Logo image" style="margin-left: 70px;" />
+       </div>
+       <label for="btn" class="icon">
+       <span class="fa fa-bars"></span>
+       </label>
+       <input type="checkbox" id="btn">
+       <ul>
+          <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" >ACCEUIL</a></li>
+          <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/filieres" >FILIERES</a></li>
+          <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/contact" >CONTACT</a></li>
+          <li>
+             <label for="btn-1" class="show">TABLEAUX</label>
+             <a href="#">TABLEAUX</a>
+             <input type="checkbox" id="btn-1">
+             <ul>
+                <li><a routerLink="/tableaup" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >PROFESSEUR</a></li>
+                <li><a routerLink="/tableau"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >ETUDIANT</a></li>
+             </ul>
+          </li> 
+       </ul>
+    </nav>
+    <script>
+       $('.icon').click(function(){
+         $('span').toggleClass("cancel");
+       });
+    </script>
+ </body>
+</html>

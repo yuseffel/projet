@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.studentService.loginStudentFromRemote(this.student).subscribe(
       (resp) => {
         console.log(resp);
-        this.toastr.success("Connectée avec succes");
+        this.toastr.success("Connectée avec succés");
         this.router.navigate(['/cfilieres'])
       },
       (err) => {

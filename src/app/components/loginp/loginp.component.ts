@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginpComponent {
   prof: Prof = new Prof();
 
-  constructor(private profService :ProfService, private toastr:ToastrService){
+  constructor(private profService :ProfService, private toastr:ToastrService,private router:Router){
   }
 
   ngOnInit(): void {  
@@ -24,11 +24,12 @@ export class LoginpComponent {
     this.profService.loginStudentFromRemote(this.prof).subscribe(
       (resp) => {
         console.log(resp);
-        this.toastr.success("Connectée avec succes");
+        this.toastr.success("Connectée avec succés");
+        this.router.navigate(['/c1filieres'])
       },
       (err) => {
         console.log(err);
-        this.toastr.error("Erreur dans votre . Veuillez réessayer");
+        this.toastr.error("Erreur dans votre connexion. Veuillez réessayer");
       }
     );
   }

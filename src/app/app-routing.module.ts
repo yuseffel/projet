@@ -9,6 +9,10 @@ import { TableauComponent } from './components/tableau/tableau.component';
 import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 import { LoginpComponent } from './components/loginp/loginp.component';
 import { TableauPComponent } from './components/tableau-p/tableau-p.component';
+import { MPOublierComponent } from './components/mpoublier/mpoublier.component';
+import { C1filliersComponent } from './components/c1filliers/c1filliers.component';
+import { EspaceaComponent } from './components/espacea/espacea.component';
+import { LoginaComponent } from './components/logina/logina.component';
 
 
 
@@ -22,7 +26,11 @@ const routes: Routes = [
   {path:'tableau',component:TableauComponent},
   {path:'cfilieres',component:CFilieresComponent},
   {path:'loginp',component:LoginpComponent},
-  {path:'tableaup',component:TableauPComponent}
+  {path:'tableaup',component:TableauPComponent},
+  {path:'mpoublier',component:MPOublierComponent},
+  {path:'c1filieres',component:C1filliersComponent},
+  {path :'espacea',component:EspaceaComponent},
+  {path:'logina', component:LoginaComponent},
  
   
 ];

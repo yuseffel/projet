@@ -20,6 +20,10 @@ import { CFilieresComponent } from './components/cfilieres/cfilieres.component';
 import { LoginpComponent } from './components/loginp/loginp.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TableauPComponent } from './components/tableau-p/tableau-p.component';
+import { MPOublierComponent } from './components/mpoublier/mpoublier.component';
+import { LoginaComponent } from './components/logina/logina.component';
+import { C1filliersComponent } from './components/c1filliers/c1filliers.component';
+import { EspaceaComponent } from './components/espacea/espacea.component';
 
 
 
@@ -42,6 +46,10 @@ import { TableauPComponent } from './components/tableau-p/tableau-p.component';
     CFilieresComponent,
     LoginpComponent,
     TableauPComponent,
+    MPOublierComponent,
+    LoginaComponent,
+    C1filliersComponent,
+    EspaceaComponent,
    
 
 
