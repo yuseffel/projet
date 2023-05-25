@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { StudentService } from 'src/app/StudentService.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Student } from 'src/app/student';
 
 @Component({
   selector: 'app-registrer',
@@ -80,5 +81,7 @@ export class RegistrerComponent  {
       }
     );
   }
+  student:Student = new Student();
+  confirmPassword:any;
 }
 

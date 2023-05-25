@@ -38,7 +38,8 @@
           </div>
           <div class="input-box">
             <span class="details">Confirmer mot de passe</span>
-            <input type="password" placeholder="Confirmer votre mot de passe" #cfmotpasse (ngModel)="cfmotpasse" name="cfmotpasse" id="cfmotpasse">
+            <input type="password" placeholder="Confirmer votre mot de passe" #cfmotpasse (ngModel)="cfmotpasse" name="cfmotpasse" id="cfmotpasse"
+             pattern="{{student.motdepasse}}">
           </div>
         </div>
         <div class="button" >
