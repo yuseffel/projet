@@ -33,8 +33,8 @@ export class RegistrerComponent  {
       this.registerF = this.formBuilder.group({
         nom :['',Validators.required],
         prenom : ['',Validators.required],
-        num : ['',Validators.required,Validators.minLength(6)],
-        email :['',Validators.required,Validators.email],
+        num : ['',Validators.compose([Validators.required,Validators.minLength(6)])],
+        email :['',Validators.compose([Validators.required,Validators.email])],
         motdepasse :['',Validators.required],
         cfmotpasse : ['',Validators.required],
   
