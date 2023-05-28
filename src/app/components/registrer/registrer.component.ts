@@ -1,8 +1,9 @@
 import { Component} from '@angular/core';
 import { StudentService } from 'src/app/StudentService.service';
-import { FormGroup, NgForm } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, NgForm, ValidationErrors, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Student } from 'src/app/student';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-registrer',
@@ -12,7 +13,9 @@ import { Student } from 'src/app/student';
 })
 export class RegistrerComponent  {
   title = 'studentdashboard';
-
+ 
+  students! : Student;
+  registerF !: FormGroup;
   studentDetails = null as any;
   studentToUpdate = {
     nom :"",
@@ -23,10 +26,20 @@ export class RegistrerComponent  {
     cfmotpasse :"",
   }
 
-  constructor(private studentService: StudentService, private toastr:ToastrService) {
+  constructor(private studentService: StudentService, private toastr:ToastrService, private formBuilder:FormBuilder) {
     this.getStudentsDetails();
   }
-
+    ngOnInit(){
+      this.registerF = this.formBuilder.group({
+        nom :['',Validators.required],
+        prenom : ['',Validators.required],
+        num : ['',Validators.required,Validators.minLength(6)],
+        email :['',Validators.required,Validators.email],
+        motdepasse :['',Validators.required],
+        cfmotpasse : ['',Validators.required],
+  
+      })
+    }
   register(registerForm: NgForm) {
     this.studentService.registerStudent(registerForm.value).subscribe(
       (resp) => {
@@ -83,6 +96,20 @@ export class RegistrerComponent  {
     );
   }
 
-  cfmotpasse:any;
+
+
 }
+   /*export function isTenAsync(control: AbstractControl): 
+  Observable<ValidationErrors | null> {
+    const v: number = control.value;
+    if (v !== 10) {
+    // Emit an object with a validation error.
+      return of({ 'notTen': true, 'requiredValue': 10 });
+    }
+    // Emit null, to indicate no error occurred.
+    return of(null);
+  }*/
+
+
+
 

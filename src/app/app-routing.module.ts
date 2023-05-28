@@ -16,6 +16,7 @@ import { LoginaComponent } from './components/logina/logina.component';
 
 
 
+
 const routes: Routes = [
 
   {path:'', component:AcceuilComponent,pathMatch:'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path:'c1filieres',component:C1filliersComponent},
   {path :'espacea',component:EspaceaComponent},
   {path:'logina', component:LoginaComponent},
+
  
   
 ];

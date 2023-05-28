@@ -50,6 +50,7 @@ import { EspaceaComponent } from './components/espacea/espacea.component';
     LoginaComponent,
     C1filliersComponent,
     EspaceaComponent,
+  
    
 
 
@@ -70,6 +71,7 @@ import { EspaceaComponent } from './components/espacea/espacea.component';
     MatButtonModule,
     ReactiveFormsModule,
     MatDialogModule,
+    ReactiveFormsModule,
   ],
 
   providers: [],
