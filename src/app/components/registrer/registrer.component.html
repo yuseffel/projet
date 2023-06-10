@@ -16,33 +16,38 @@
     <div class="content">
       <form action="#" #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
         <div class="user-details">
-          <div class="input-box">
+          <div class="input-box"  [formGroup]="registerF">
             <span class="details">Nom </span>
-            <input type="text" placeholder="Entrer votre nom" #nom (ngModel)="nom" name="nom" id="nom" >
+            <input type="text" placeholder="Entrer votre nom" formControlName="nom" #nom  name="nom" id="nom"  required>
+            <span> </span>
           </div>
-          <div class="input-box">
+          <div class="input-box" [formGroup]="registerF">
             <span class="details">Prénom</span>
-            <input type="text" placeholder="Entrer votre prénom" #prenom (ngModel)="prenom" name="prenom" id="prenom">
+            <input type="text" placeholder="Entrer votre prénom" formControlName="prenom" name="prenom" id="prenom" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" [formGroup]="registerF">
             <span class="details">Email</span>
+<<<<<<< HEAD
             <input formControlName="email" type="email" placeholder="Entrer votre email" #email (ngModel)="email" name="email" id="email">
+=======
+            <input type="email" placeholder="Entrer votre email" formControlName="email" name="email" id="email" required>
+>>>>>>> 66146617f5e0b9eea58be4073d251ee0cd6ba3d0
           </div>
-          <div class="input-box">
+          <div class="input-box" [formGroup]="registerF">
             <span class="details">Numéro apogée</span>
-            <input type="number" placeholder="Entrer votre numéro apogée" #num (ngModel)="num" name="num" id="num">
+            <input type="number" placeholder="Entrer votre numéro apogée" formControlName="num" name="num" id="num" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" [formGroup]="registerF">
             <span class="details">Mot de passe</span>
-            <input type="password" placeholder="Entrer votre mot de passe" #motdepasse (ngModel)="motdepasse" name="motdepasse" id="motdepasse">
+            <input type="password" placeholder="Entrer votre mot de passe" formControlName="motdepasse" name="motdepasse" id="motdepasse" required>
           </div>
-          <div class="input-box">
+          <div class="input-box" [formGroup]="registerF">
             <span class="details">Confirmer mot de passe</span>
-            <input type="password" placeholder="Confirmer votre mot de passe" #cfmotpasse (ngModel)="cfmotpasse" name="cfmotpasse" id="cfmotpasse" >
+            <input type="password" placeholder="Confirmer votre mot de passe" formControlName="cfmotpasse" name="cfmotpasse" id="cfmotpasse" required >
           </div>
         </div>
         <div class="button" >
-          <input type="submit"  value="S'inscrire">
+          <input type="submit"  value="S'inscrire" >
         </div>
         <div class="signup-link"> <a routerLink="/login">Se connecter</a></div>
       </form>

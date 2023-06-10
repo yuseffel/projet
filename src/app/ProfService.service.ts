@@ -30,6 +30,5 @@ public loginStudentFromRemote(prof: Prof):Observable<any>{
   console.log(prof)
  return this.http.post(this.API + '/loginp', prof);
 }
-
-  
+ 
 }

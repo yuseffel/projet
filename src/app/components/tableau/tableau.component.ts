@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../../StudentService.service';
-import { NgForm } from '@angular/forms';
+import { FormGroup, NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class TableauComponent {
   title = 'studentdashboard';
 
+
   studentDetails = null as any;
   studentToUpdate = {
     nom :"",
@@ -24,7 +25,7 @@ export class TableauComponent {
   }
  
 
-  constructor(private studentService: StudentService , private toastr:ToastrService , dialog:MatDialog) {
+  constructor(private studentService: StudentService , private toastr:ToastrService) {
     this.getStudentsDetails();
   }
 
