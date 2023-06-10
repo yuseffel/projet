@@ -13,6 +13,7 @@ import { MPOublierComponent } from './components/mpoublier/mpoublier.component';
 import { C1filliersComponent } from './components/c1filliers/c1filliers.component';
 import { EspaceaComponent } from './components/espacea/espacea.component';
 import { LoginaComponent } from './components/logina/logina.component';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -36,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), MatFormFieldModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
