@@ -33,11 +33,7 @@
           </div>
           <div class="input-box" >
             <span class="details">Email</span>
-            <input type="email" placeholder="Entrer votre email"  formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"   name="email" id="email" required>
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.pattern">email must be @etu.uae.ac.ma</div>
-          </div>
+            <input type="email" placeholder="Entrer votre email" formControlName="email" name="email" id="email" required>
           </div>
           <div class="input-box" >
             <span class="details">Numéro apogée</span>

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class StudentService {
   constructor(private http: HttpClient) { }
 
-    API = 'http://localhost:8080';
+  API = 'http://localhost:8080';
 
   public registerStudent(studentData: any) {
     return this.http.post(this.API + '/registrer', studentData);
