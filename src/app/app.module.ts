@@ -30,12 +30,6 @@ import { TableauContaComponent } from './components/tableau-conta/tableau-conta.
 
 
 
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,15 +48,7 @@ import { TableauContaComponent } from './components/tableau-conta/tableau-conta.
     C1filliersComponent,
     EspaceaComponent,
     Navbar2Component,
-    TableauContaComponent,
-
-  
-   
-
-
-
-
-
+    TableauContaComponent, 
 
   ],
   imports: [
