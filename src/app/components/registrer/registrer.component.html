@@ -32,7 +32,7 @@
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="email" placeholder="Entrer votre email" formControlName="email"
+            <input type="email" placeholder="Entrer votre email instituel" formControlName="email"
               pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
             <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
             <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>

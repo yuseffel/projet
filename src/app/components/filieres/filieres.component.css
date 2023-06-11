@@ -26,7 +26,9 @@
     margin: 5% 5% 5% 10%;
     background-color: white;
   }
-
+body{
+  background-image: linear-gradient(to right, #FFA500  0%, rgb(121,120,120) 100%);
+}
   .blog-post__img {
     position: relative;
     min-width: 35rem;

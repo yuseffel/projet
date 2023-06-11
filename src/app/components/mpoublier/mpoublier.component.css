@@ -34,6 +34,23 @@ body{
   user-select: none;
   border-radius: 15px 15px 0 0;
   background:  #FFA500;
+}form .field input[type="Submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg,#FFA500, #FFA500);
+  transition: all 0.3s ease;
+}
+form .field input[type="Submit"]:hover{
+  background: linear-gradient(-135deg, rgb(121,120,120), #FFA500);
+
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
 }
 .wrapper form{
   padding: 0px 30px 50px 30px;

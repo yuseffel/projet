@@ -58,6 +58,27 @@ td{
   .user-details .input-box input:valid{
     border-color: #FFA500;
   }
+  form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    height: 50px;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+     background: linear-gradient(135deg, #FFA500, #FFA500);
+   }
+   
+   form .button input:hover{
+    /* transform: scale(0.99); */
+    background: linear-gradient(-135deg, rgb(121,120,120), #FFA500);
+    }
    form .category{
      display: flex;
      width: 80%;
