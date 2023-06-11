@@ -4,6 +4,7 @@ body {
 body {
 	font-family: 'Poppins', sans-serif;
 	color: #fff;
+	background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
 }
 
 section{

@@ -1,68 +1,59 @@
-import { Component, OnInit} from '@angular/core';
-import { StudentService } from 'src/app/StudentService.service';
-import { AbstractControl, FormBuilder, FormGroup, NgForm, ValidationErrors, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Student } from 'src/app/student';
+import { StudentService } from 'src/app/StudentService.service';
 
 @Component({
   selector: 'app-registrer',
   templateUrl: './registrer.component.html',
-  styleUrls: ['./registrer.component.css'],
-  
+  styleUrls: ['./registrer.component.css']
 })
-export class RegistrerComponent implements OnInit {
+export class RegistrerComponent {
   title = 'studentdashboard';
-  registerForm !: FormGroup;
-  studentDetails = null as any;
-  submitted = false;
-  cfmotdepasse !:any;
-
-
-  constructor(private studentService: StudentService, private toastr:ToastrService, private formBuilder:FormBuilder) {
-   
-  }
-    ngOnInit(){
-      this.registerForm = this.formBuilder.group({
-        nom :['',Validators.required],
-        prenom : ['',Validators.required],
-        num : ['',Validators.compose([Validators.required,Validators.minLength(6)])],
-        email :['',Validators.compose([Validators.required,Validators.email,Validators.pattern(/^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$/)])],
-        motdepasse :['',Validators.compose([Validators.required,Validators.minLength(6)])],
-        cfmotpasse :['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
-    }, {
-        validators: MustMatch('motdepasse', 'cfmotdepasse')
-      })
-    }
-
-    get f() { return this.registerForm.controls; }
-
- register() { 
-    this.submitted = true;
-    this.studentService.registerStudent(this.registerForm.value).subscribe(
-      (resp) => {
-        console.log(resp);
-        this.registerForm.reset();
-        this.getStudentsDetails();
-        this.toastr.success("Votre inscription est bien enregistré");
-      },
-      (err) => {
-        console.log(err);
-        this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
-      }
-    );
+  alert: boolean = false;
+  students: Student[] = [];
+  registerF!: FormGroup;
+  studentDetails: any = null;
+  studentToUpdate = {
+    nom: "",
+    prenom: "",
+    num: "",
+    email: "",
+    motdepasse: "",
+    cfmotpasse: "",
   }
 
- /* register() {
-    this.submitted = true;
-    // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;       
-    }
-    // display form values on success
-    this.registerForm.reset();
+  constructor(private studentService: StudentService, private toastr: ToastrService, private formBuilder: FormBuilder) {
     this.getStudentsDetails();
-    this.toastr.success("Votre inscription est bien enregistré");
-}*/
+  }
+
+  ngOnInit() {
+    this.registerF = this.formBuilder.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      num: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+      cfmotpasse: ['', Validators.required],
+    },{ validator: this.passwordMatchValidator() })
+  }
+
+  register() {
+    if (this.registerF.valid) {
+      this.studentService.registerStudent(this.registerF.value).subscribe(
+        (resp) => {
+          console.log(resp);
+          this.registerF.reset();
+          this.getStudentsDetails();
+          this.alert = true;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
+  }
 
   getStudentsDetails() {
     this.studentService.getStudents().subscribe(
@@ -75,30 +66,50 @@ export class RegistrerComponent implements OnInit {
       }
     );
   }
-}
-export function MustMatch(controlName: string, matchingControlName: string) {
-  return (group: AbstractControl) => {
-      const control = group.get(controlName)?.value;
-      const matchingControl = group.get(matchingControlName)?.value;
 
-      if (!control || !matchingControl) {
-          return null;
+  deleteStudent(student: any) {
+    this.studentService.deleteStudent(student.rollNumber).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.getStudentsDetails();
+      },
+      (err) => {
+        console.log(err);
       }
+    );
+  }
 
-      // return if another validator has already found an error on the matchingControl
-      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-          return null;
-      }
+  edit(student: any) {
+    this.studentToUpdate = student;
+  }
 
-      // set error on matchingControl if validation fails
-      if (control.value !== matchingControl.value) {
-          matchingControl.setErrors({ mustMatch: true });
-      } else {
-          matchingControl.setErrors(null);
+  updateStudent() {
+    this.studentService.updateStudents(this.studentToUpdate).subscribe(
+      (resp) => {
+        console.log(resp);
+        this.getStudentsDetails();
+      },
+      (err) => {
+        console.log(err);
       }
-      return null;
+    );
+  }
+  
+  passwordMatchValidator(): any {
+    return (formGroup: FormGroup) => {
+      const passwordControl = formGroup.get('motdepasse');
+      const confirmPasswordControl = formGroup.get('cfmotpasse');
+  
+      if (passwordControl && confirmPasswordControl) {
+        const passwordValue = passwordControl.value;
+        const confirmPasswordValue = confirmPasswordControl.value;
+  
+        if (passwordValue !== confirmPasswordValue) {
+          confirmPasswordControl.setErrors({ passwordMismatch: true });
+        } else {
+          confirmPasswordControl.setErrors(null);
+        }
+      }
+    };
   }
 }
-
-
-
