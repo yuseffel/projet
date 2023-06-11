@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <app-navbar2></app-navbar2>
+    </header>
+    <main>
+    <div class="mt-5">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Numéro Apogée</th>
+              <th>Email</th>
+              <th>Message</th>
+              <th>Supprimer</th>
+              
+            </tr>
+          </thead>
+          <tbody class="tbody" >
+            <tr *ngFor="let contact of contactDetails">
+              <td>{{contact.id}}</td>
+              <td>{{contact.nom}}</td>
+              <td>{{contact.prenom}}</td>
+              <td>{{contact.num}}</td>
+              <td>{{contact.email}}</td>
+              <td>{{contact.message}}</td>
+              <td><button mat-raised-button type="button" color="warn" (click)=" deleteContact(contact)">Supprimer</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    
+</body>
+</html>

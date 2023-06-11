@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../../StudentService.service';
-import { FormGroup, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
+import { Student } from 'src/app/student';
 
 @Component({
   selector: 'app-tableau' ,
@@ -14,6 +15,8 @@ export class TableauComponent {
   title = 'studentdashboard';
 
 
+  students! : Student;
+  registerF !: FormGroup;
   studentDetails = null as any;
   studentToUpdate = {
     nom :"",
@@ -24,9 +27,19 @@ export class TableauComponent {
     cfmotpasse :"",
   }
  
-
-  constructor(private studentService: StudentService , private toastr:ToastrService) {
+  constructor(private studentService: StudentService , private toastr:ToastrService,private formBuilder:FormBuilder) {
     this.getStudentsDetails();
+  }
+  ngOnInit(){
+    this.registerF = this.formBuilder.group({
+      nom :['',Validators.required],
+      prenom : ['',Validators.required],
+      num : ['',Validators.compose([Validators.required,Validators.minLength(6)])],
+      email :['',Validators.compose([Validators.required,Validators.email])],
+      motdepasse :['',Validators.required],
+      cfmotpasse : ['',Validators.required],
+
+    })
   }
 
   register(registerForm: NgForm) {

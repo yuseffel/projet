@@ -12,17 +12,53 @@
     </header>
     <main>
         <div class="container1" >
-            <form>
+            
+            <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+            
+                <div>
                 <h1>CONTACTEZ-NOUS</h1>
-                <input type="text" id="nom" placeholder="Nom" required>
-                <input type="text" id="prenom" placeholder="Prénom" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="number" id="numero apogee" placeholder="Numéro apogée" required>
-                <h4>Votre message</h4>
-                <textarea required></textarea>
-                <input type="submit" value="Envoyer" id="button">
+                </div>
+                <div *ngIf="alert"  class="alert alert-success alert-dismissible" role="alert" style="padding-top: 10px !important; padding-left: 10px;">
+                    <strong>succès!</strong> votre message a été envoyée avec succès.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="margin-bottom: 15px;"></button>
+                </div>
+                <div class="row" style="padding-left: 30px;">
+                <div class="col-lg-6">
+                <input ngModel type="text" #nom="ngModel" name="nom"  id="nom" placeholder="Nom" required value="">
+                <small class="form-text text-muted" *ngIf="nom.touched && !nom.valid" style="color: red !important;">Nom est requis.</small>
+                </div>
+                <div class="col-lg-6">
+                <input ngModel type="text"  #prenom="ngModel" name="prenom" id="prenom" placeholder="Prénom" required>
+                <small class="form-text text-muted" *ngIf="prenom.touched && !prenom.valid" style="color: red !important;">Prenom est requis.</small>
+                </div>
+                <!--***********************************-->
+                <!--<div class="col-lg-6">
+                <input ngModel type="email" #email="ngModel" name="email" id="email" placeholder="Email" required>
+                <small class="form-text text-muted" *ngIf="email.touched && !email.valid" style="color: red !important;">Email est requis.</small>
+                </div>-->
+                <div class="col-lg-6">
+                <input ngModel type="text" #email="ngModel" name="email" id="email" placeholder="Email" required
+                pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
+              <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['required']" style="color: red !important;">Email est requis.</small>
+              <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
+            </div>
+                
+                 <!--***********************************-->
+                <div class="col-lg-6">
+                <input ngModel type="number" #num="ngModel" name="num" id="num" placeholder="Numéro apogée" required>
+                <small class="form-text text-muted" *ngIf="num.touched && !num.valid" style="color: red !important;">Numero apogée est requis.</small>
+                </div>
+                <div >
+                <textarea ngModel type="text" #message="ngModel" name="message"  id="message" placeholder="Votre message" required></textarea>
+                <small class="form-text text-muted" *ngIf="message.touched && !nom.valid" style="color: red !important;">Message est requis.</small>
+               </div>
+               <div >
+                <button type="submit" class="btn" [disabled]="!registerForm.valid" id="button">Envoyer</button>
+               </div>
+             </div>
             </form>
         </div>
+        
     </main>
 
 

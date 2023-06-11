@@ -1,9 +1,7 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { StudentService } from 'src/app/StudentService.service';
 import { AbstractControl, FormBuilder, FormGroup, NgForm, ValidationErrors, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { Student } from 'src/app/student';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-registrer',
@@ -11,40 +9,39 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./registrer.component.css'],
   
 })
-export class RegistrerComponent  {
+export class RegistrerComponent implements OnInit {
   title = 'studentdashboard';
- 
-  students! : Student;
-  registerF !: FormGroup;
+  registerForm !: FormGroup;
   studentDetails = null as any;
-  studentToUpdate = {
-    nom :"",
-    prenom :"",
-    num :"",
-    email :"",
-    motdepasse :"",
-    cfmotpasse :"",
-  }
+  submitted = false;
+  cfmotdepasse !:any;
+
 
   constructor(private studentService: StudentService, private toastr:ToastrService, private formBuilder:FormBuilder) {
-    this.getStudentsDetails();
+   
   }
     ngOnInit(){
-      this.registerF = this.formBuilder.group({
+      this.registerForm = this.formBuilder.group({
         nom :['',Validators.required],
         prenom : ['',Validators.required],
         num : ['',Validators.compose([Validators.required,Validators.minLength(6)])],
-        email :['',Validators.compose([Validators.required,Validators.email])],
-        motdepasse :['',Validators.required],
-        cfmotpasse : ['',Validators.required],
-  
+        email :['',Validators.compose([Validators.required,Validators.email,Validators.pattern(/^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$/)])],
+        motdepasse :['',Validators.compose([Validators.required,Validators.minLength(6)])],
+        cfmotpasse :['', Validators.required],
+        acceptTerms: [false, Validators.requiredTrue]
+    }, {
+        validators: MustMatch('motdepasse', 'cfmotdepasse')
       })
     }
-  register(registerForm: NgForm) {
-    this.studentService.registerStudent(registerForm.value).subscribe(
+
+    get f() { return this.registerForm.controls; }
+
+ register() { 
+    this.submitted = true;
+    this.studentService.registerStudent(this.registerForm.value).subscribe(
       (resp) => {
         console.log(resp);
-        registerForm.reset();
+        this.registerForm.reset();
         this.getStudentsDetails();
         this.toastr.success("Votre inscription est bien enregistré");
       },
@@ -53,8 +50,19 @@ export class RegistrerComponent  {
         this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
       }
     );
-
   }
+
+ /* register() {
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;       
+    }
+    // display form values on success
+    this.registerForm.reset();
+    this.getStudentsDetails();
+    this.toastr.success("Votre inscription est bien enregistré");
+}*/
 
   getStudentsDetails() {
     this.studentService.getStudents().subscribe(
@@ -67,49 +75,30 @@ export class RegistrerComponent  {
       }
     );
   }
-
-  deleteStudent(student: any) {
-    this.studentService.deleteStudent(student.rollNumber).subscribe(
-      (resp) => {
-        console.log(resp);
-        this.getStudentsDetails();
-        
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-
-  edit(studuent: any){
-    this.studentToUpdate = studuent;
-  }
-
-  updateStudent(){
-    this.studentService.updateStudents(this.studentToUpdate).subscribe(
-      (resp) => {
-        console.log(resp);
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-
-
-
 }
-   /*export function isTenAsync(control: AbstractControl): 
-  Observable<ValidationErrors | null> {
-    const v: number = control.value;
-    if (v !== 10) {
-    // Emit an object with a validation error.
-      return of({ 'notTen': true, 'requiredValue': 10 });
-    }
-    // Emit null, to indicate no error occurred.
-    return of(null);
-  }*/
+export function MustMatch(controlName: string, matchingControlName: string) {
+  return (group: AbstractControl) => {
+      const control = group.get(controlName)?.value;
+      const matchingControl = group.get(matchingControlName)?.value;
 
+      if (!control || !matchingControl) {
+          return null;
+      }
+
+      // return if another validator has already found an error on the matchingControl
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          return null;
+      }
+
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({ mustMatch: true });
+      } else {
+          matchingControl.setErrors(null);
+      }
+      return null;
+  }
+}
 
 
 

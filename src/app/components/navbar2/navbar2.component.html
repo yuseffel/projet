@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <nav>
+      <div class="logo" ><a routerLink="/logina">
+         <img src="../../../assets/photos/IMG_6409.jpg" width="130px" height="70px" id=logo alt="Logo image" style="margin-left: 70px;" />
+        </a>
+      </div>
+      <label for="btn" class="icon">
+      <span class="fa fa-bars"></span>
+      </label>
+      <input type="checkbox" id="btn">
+      <ul>
+         <li><a routerLink="/espacea" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >PROFESSEUR</a></li>
+         <li><a routerLink="/tableau"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >ETUDIANT</a></li>
+         <li><a routerLink="/tableaucontac"routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >MESSAGE</a></li>
+      </ul>
+   </nav>
+   <script>
+      $('.icon').click(function(){
+        $('span').toggleClass("cancel");
+      });
+   </script>
+</body>
+</html>
+
