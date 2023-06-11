@@ -26,6 +26,8 @@ import { C1filliersComponent } from './components/c1filliers/c1filliers.componen
 import { EspaceaComponent } from './components/espacea/espacea.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
+import { Navbar3Component } from './components/navbar3/navbar3.component';
+import { SemestreComponent } from './components/semestre/semestre.component';
 
 
 
@@ -48,7 +50,9 @@ import { TableauContaComponent } from './components/tableau-conta/tableau-conta.
     C1filliersComponent,
     EspaceaComponent,
     Navbar2Component,
-    TableauContaComponent, 
+    TableauContaComponent,
+    Navbar3Component,
+    SemestreComponent, 
 
   ],
   imports: [

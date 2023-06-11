@@ -167,3 +167,67 @@ html {
 		transform: rotate(-15deg);
 	}
 }
+/* Default styles */
+
+/* Add your default styles here */
+
+/* Media queries for different screen sizes */
+
+/* Small devices (up to 576px) */
+@media (max-width: 576px) {
+	.container-text h1 {
+	  font-size: 40px;
+	}
+	
+	.description-photo {
+	  flex-direction: column;
+	  height: auto;
+	}
+	
+	.desc {
+	  width: 100%;
+	  margin-top: 20px;
+	  font-size: 100%;
+	}
+	
+	#list {
+	  margin-left: 0;
+	}
+	
+	.follow {
+	  height: 10vh;
+	}
+  }
+  
+  /* Medium devices (between 576px and 992px) */
+  @media (min-width: 576px) and (max-width: 992px) {
+	.container-text h1 {
+	  font-size: 48px;
+	}
+	
+	.description-photo {
+	  height: auto;
+	}
+	
+	.desc {
+	  margin-top: 20px;
+	}
+	
+	#list {
+	  margin-left: 0;
+	}
+	
+	.follow {
+	  height: 10vh;
+	}
+  }
+  
+  /* Large devices (992px and above) */
+  @media (min-width: 992px) {
+	.container-text h1 {
+	  font-size: 56px;
+	}
+	
+	/* Add any additional styles for larger screens here */
+  }
+  

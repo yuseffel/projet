@@ -15,6 +15,8 @@ import { EspaceaComponent } from './components/espacea/espacea.component';
 import { LoginaComponent } from './components/logina/logina.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
+import { SemestreComponent } from './components/semestre/semestre.component';
+import { Navbar3Component } from './components/navbar3/navbar3.component';
 
 
 
@@ -35,7 +37,8 @@ const routes: Routes = [
   {path :'espacea',component:EspaceaComponent},
   {path:'logina', component:LoginaComponent},
   {path:'tableaucontac', component:TableauContaComponent},
-
+  {path:'semestre', component:SemestreComponent},
+  {path:'navbar3', component:Navbar3Component},
  
   
 ];

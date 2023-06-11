@@ -100,7 +100,7 @@ body{
       flex-direction: column;
     }
     .blog-post__img {
-      min-width: 100%;
+       min-width: 100%; 
       transform: translate(0, -8rem);
     }
   }

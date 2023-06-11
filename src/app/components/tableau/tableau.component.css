@@ -1,130 +1,125 @@
-.mt-5{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
+
 body {
-  background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
+  background: linear-gradient(135deg, rgb(121, 120, 120), #f0b851);
 }
-thead{
-    background: #FFA500 /* linear-gradient(135deg, rgb(121,120,120), #f0b851);*/
-}
-table{
-    margin-top: 6px;
-}
-td{
-  background: white;
-}
-.card{
-        max-width: 700px;
-        width: 100%;
-        background-color: #fff;
-        padding: 25px 30px;
-        border-radius: 5px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-        backdrop-filter: blur(10px);
-        margin-left: 400px;
-        margin-top: 20px;
-       /* background: linear-gradient(135deg, rgb(121,120,120), #f0b851);*/
-}
-.content form .user-details{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  form .user-details .input-box{
-    margin-bottom: 15px;
 
-  }
-  form .input-box span.details{
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
-  }
-  
-  .user-details .input-box input{
-    height: 30px;
-    width: 100%;
-    outline: none;
-    font-size: 16px;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
-  }
-  .user-details .input-box input:focus,
-  .user-details .input-box input:valid{
-    border-color: #FFA500;
-  }
-  form .button input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    font-size: 17px;
-    padding-left: 20px;
-    border: 1px solid lightgrey;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    height: 50px;
-    color: #fff;
-    width: 100%;
-    margin-top: 20px;
-    position: relative;
-     background: linear-gradient(135deg, #FFA500, #FFA500);
-   }
-   
-   form .button input:hover{
-    /* transform: scale(0.99); */
-    background: linear-gradient(-135deg, rgb(121,120,120), #FFA500);
-    }
-   form .category{
-     display: flex;
-     width: 80%;
-     margin: 14px 0 ;
-     justify-content: space-between;
-   }
-   form .category label{
-     display: flex;
-     align-items: center;
-     cursor: pointer;
-   }
-   form .category label .dot{
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    margin-right: 10px;
-    background: #d9d9d9;
-    border: 5px solid transparent;
-    transition: all 0.3s ease;
-  }
-   #dot-1:checked ~ .category label .one,
-   #dot-2:checked ~ .category label .two,
-   #dot-3:checked ~ .category label .three{
-     background: #FFA500;
-     border-color: #d9d9d9;
-   }
-   form input[type="radio"]{
-     display: none;
-   }
-   form .button{
-     height: 30px;
-     margin: 30px 0
-   }
-   form input[type="radio"]{
-    display: none;
-  }
-  form .button input{
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.card {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+  height: 30px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #ffa500;
+}
+
+form .button input {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  color: #fff;
+  background: linear-gradient(135deg, #ffa500, #ffa500);
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, rgb(121, 120, 120), #ffa500);
+}
+
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  background: #ffa500;
+  border-color: #d9d9d9;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  margin: 30px 0;
+}
+
+form .button input {
+  height: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease
+;
     background: linear-gradient(135deg, #FFA500, #FFA500);
   }
