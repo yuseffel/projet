@@ -14,6 +14,7 @@ import { C1filliersComponent } from './components/c1filliers/c1filliers.componen
 import { EspaceaComponent } from './components/espacea/espacea.component';
 import { LoginaComponent } from './components/logina/logina.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
+import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 
 
 
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:'c1filieres',component:C1filliersComponent},
   {path :'espacea',component:EspaceaComponent},
   {path:'logina', component:LoginaComponent},
+  {path:'tableaucontac', component:TableauContaComponent},
 
  
   

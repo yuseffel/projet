@@ -27,13 +27,17 @@
             <span class="details">Prénom</span>
             <input type="text" placeholder="Entrer votre prénom" formControlName="prenom" class="form-control" [ngClass]="{'is-invalid': submitted && f.prenom.errors }"   name="prenom" id="prenom" required>
             <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
-              <div *ngIf="f.prenom.errors.required">prenom is required</div>
+             <div *ngIf="f.prenom.errors.required">prenom is required</div>
           </div>
             
           </div>
           <div class="input-box" >
             <span class="details">Email</span>
-            <input type="email" placeholder="Entrer votre email" formControlName="email" name="email" id="email" required>
+            <input type="email" placeholder="Entrer votre email" formControlName="email" name="email" id="email" [ngClass]="{'is-invalid': submitted && f.email.errors }" required>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">email is required</div>
+              <div *ngIf="f.email.errors.pattern">email must be ....@etu.uae.ac.ma</div>
+          </div>
           </div>
           <div class="input-box" >
             <span class="details">Numéro apogée</span>
