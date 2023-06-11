@@ -1,8 +1,19 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators , FormControl } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Student } from 'src/app/student';
 import { StudentService } from 'src/app/StudentService.service';
+
+export function validateNumApogee(control: FormControl): { [key: string]: any } | null {
+  const value = control.value;
+  const validPattern = /^\d{8}$/; // Vérifie si la valeur contient exactement 6 chiffres
+
+  if (value && !validPattern.test(value)) {
+    return { 'huitDigits': true }; // Retourne une erreur si la validation échoue
+  }
+
+  return null; // La validation a réussi
+}
 
 @Component({
   selector: 'app-registrer',
@@ -32,7 +43,7 @@ export class RegistrerComponent {
     this.registerF = this.formBuilder.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
-      num: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      num: ['', Validators.compose([Validators.required, validateNumApogee])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       motdepasse: ['', Validators.required],
       cfmotpasse: ['', Validators.required],

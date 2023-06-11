@@ -40,8 +40,8 @@
           
           <div class="input-box">
             <span class="details">Numéro apogée</span>
-            <input type="number" placeholder="Entrer votre numéro apogée" formControlName="num">
-            <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && registerF.get('num')?.invalid" style="color: red !important;">Numéro apogée est requis.</small>
+            <input type="number" placeholder="Entrer votre numéro apogée" formControlName="num" [class.is-invalid]="registerF.get('num')?.touched && registerF.get('num')?.errors?.sixDigits">
+            <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && (registerF.get('num')?.errors?.huitDigits || registerF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
           </div>
           <div class="input-box">
             <span class="details">Mot de passe</span>
