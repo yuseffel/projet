@@ -6,23 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>motdepasseoublier</title>
 </head>
-  <header>
-    <app-navbar></app-navbar>
-  </header>
   <body>
       <div class="wrapper">
         <div class="title">Mot de passe oublié</div>
-        <form #loginform="ngForm" action="#">
-          <div class="field">
-            <input type="email"  id="email" name="email">
+        <form [formGroup]="motdepasseoublierForm" action="#">
+          <div  class="field">
+            <input type="email" matInput formControlName="email" pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$" id="email" name="email"required>
             <label>Adresse email</label>
+            <small class="form-text text-muted" *ngIf="motdepasseoublierForm.get('email')?.touched && motdepasseoublierForm.get('email')?.invalid && !motdepasseoublierForm.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
+            <small class="form-text text-muted" *ngIf="motdepasseoublierForm.get('email')?.touched && motdepasseoublierForm.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
           </div>
           <div class="field">
-            <input type="password"id="motdepasse" name="motdepasse">
-            <label>Mot de passe</label>
-          </div>
-          <div class="field">
-            <input type="submit" value="Submit">
+            <input type="submit" (click)="handleSubmit()" [disabled]="motdepasseoublierForm.invalid" value="Submit">
           </div>
     
         </form>

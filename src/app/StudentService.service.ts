@@ -30,6 +30,9 @@ export class StudentService {
     console.log(student)
    return this.http.post(this.API + '/login', student);
  }
+ public motdepasseoublier(data: any) {
+  return this.http.post(this.API + '/moubliermotdepasse', data);
+}
 
 
 }
