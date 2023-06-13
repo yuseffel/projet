@@ -11,10 +11,10 @@
     </header>
     <main>
     <div class="mt-5">
+      <input  class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher message ">
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Nom</th>
               <th>Prenom</th>
               <th>Numéro Apogée</th>
@@ -25,17 +25,35 @@
             </tr>
           </thead>
           <tbody class="tbody" >
-            <tr *ngFor="let contact of contactDetails">
-              <td>{{contact.id}}</td>
+            <tr *ngFor="let contact of contactDetails| filter:searchText">
               <td>{{contact.nom}}</td>
               <td>{{contact.prenom}}</td>
               <td>{{contact.num}}</td>
               <td>{{contact.email}}</td>
               <td>{{contact.message}}</td>
-              <td><button mat-raised-button type="button" color="warn" (click)=" deleteContact(contact)">Supprimer</button></td>
+              <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" data-bs-target="#exampleModal0">Supprimer</button></td>
             </tr>
           </tbody>
         </table>
+      </div>
+      <div class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">Suppression d'un message</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              </button>
+            </div>
+            <div class="modal-body1">
+              <form  *ngFor="let contact of contactDetails">
+                Est-ce que vous êtes sûre?
+                <div class="form-group">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)=" deleteContact(contact)">Supprimer</button>
+                </div>
+              </form>
+            </div>             
+          </div>
+        </div>
       </div>
     </main>
 

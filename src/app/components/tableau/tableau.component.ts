@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../../StudentService.service';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { Student } from 'src/app/student';
@@ -13,9 +13,9 @@ import { Student } from 'src/app/student';
 })
 export class TableauComponent {
   title = 'studentdashboard';
-
-
-  students! : Student;
+   searchText:any
+  alert: boolean = false;
+  students: Student[] = [];
   registerF !: FormGroup;
   studentDetails = null as any;
   studentToUpdate = {
@@ -30,31 +30,31 @@ export class TableauComponent {
   constructor(private studentService: StudentService , private toastr:ToastrService,private formBuilder:FormBuilder) {
     this.getStudentsDetails();
   }
-  ngOnInit(){
+  ngOnInit() {
     this.registerF = this.formBuilder.group({
-      nom :['',Validators.required],
-      prenom : ['',Validators.required],
-      num : ['',Validators.compose([Validators.required,Validators.minLength(6)])],
-      email :['',Validators.compose([Validators.required,Validators.email])],
-      motdepasse :['',Validators.required],
-      cfmotpasse : ['',Validators.required],
-
-    })
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      num: ['', Validators.compose([Validators.required, validateNumApogee])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+      cfmotpasse: ['', Validators.required],
+    },{ validator: this.passwordMatchValidator() })
   }
 
-  register(registerForm: NgForm) {
-    this.studentService.registerStudent(registerForm.value).subscribe(
-      (resp) => {
-        console.log(resp);
-        registerForm.reset();
-        this.getStudentsDetails();
-        this.toastr.success("Votre inscription est bien enregistré");
-      },
-      (err) => {
-        console.log(err);
-        this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
-      }
-    );
+  register() {
+    if (this.registerF.valid) {
+      this.studentService.registerStudent(this.registerF.value).subscribe(
+        (resp) => {
+          console.log(resp);
+          this.registerF.reset();
+          this.getStudentsDetails();
+          this.alert = true;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
   }
 
   getStudentsDetails() {
@@ -102,7 +102,34 @@ export class TableauComponent {
     );
 
   }
- 
 
-
+  passwordMatchValidator(): any {
+    return (formGroup: FormGroup) => {
+      const passwordControl = formGroup.get('motdepasse');
+      const confirmPasswordControl = formGroup.get('cfmotpasse');
+  
+      if (passwordControl && confirmPasswordControl) {
+        const passwordValue = passwordControl.value;
+        const confirmPasswordValue = confirmPasswordControl.value;
+  
+        if (passwordValue !== confirmPasswordValue) {
+          confirmPasswordControl.setErrors({ passwordMismatch: true });
+        } else {
+          confirmPasswordControl.setErrors(null);
+        }
+      }
+    };
+  }
 }
+export function validateNumApogee(control: FormControl): { [key: string]: any } | null {
+  const value = control.value;
+  const validPattern = /^\d{8}$/; // Vérifie si la valeur contient exactement 6 chiffres
+
+  if (value && !validPattern.test(value)) {
+    return { 'huitDigits': true }; // Retourne une erreur si la validation échoue
+  }
+
+  return null; // La validation a réussi
+} 
+
+

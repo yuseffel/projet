@@ -16,7 +16,11 @@ td{
 tr{
   background-color: #FFA500;
 }
+.search{
+  margin-bottom: 2px;
+  margin-left: 3px;
 
+}
 .card {
   max-width: 700px;
   width: 100%;

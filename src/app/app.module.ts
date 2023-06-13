@@ -28,6 +28,8 @@ import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 import { Navbar3Component } from './components/navbar3/navbar3.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -54,6 +56,8 @@ import { SemestreComponent } from './components/semestre/semestre.component';
     Navbar3Component,
     SemestreComponent, 
 
+  
+
   ],
   imports: [
     BrowserModule,
@@ -68,10 +72,14 @@ import { SemestreComponent } from './components/semestre/semestre.component';
     ReactiveFormsModule,
     MatDialogModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
+
+    
   ],
 
   providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+
 

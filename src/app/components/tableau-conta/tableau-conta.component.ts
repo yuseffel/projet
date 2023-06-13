@@ -9,7 +9,7 @@ import { ContactService } from 'src/app/contact.service';
 })
 export class TableauContaComponent {
 
- 
+  searchText:any;
   contactDetails = null as any;
   constructor(private contactService: ContactService , private toastr:ToastrService) {
     this.getContactDetails();

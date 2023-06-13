@@ -37,7 +37,7 @@
                 <small class="form-text text-muted" *ngIf="email.touched && !email.valid" style="color: red !important;">Email est requis.</small>
                 </div>-->
                 <div class="col-lg-6">
-                <input ngModel type="text" #email="ngModel" name="email" id="email" placeholder="entrer votre email instituel" required
+                <input ngModel type="text" #email="ngModel" name="email" id="email" placeholder="Entrer votre email instituel" required
                 pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
               <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['required']" style="color: red !important;">Email est requis.</small>
               <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['pattern']" style="color: red !important;">Email invalide.</small>

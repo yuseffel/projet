@@ -1,23 +1,26 @@
 body {
-	height: 100%;
+	height: 200%;
 }
 body {
 	font-family: 'Poppins', sans-serif;
 	color: #fff;
+	background: linear-gradient(135deg, rgb(121,120,120), #f0b851);
 }
 
 section{
 	padding-block: 50px;
+	margin-top: 3.45%;
 }
 /* ======================== */
 .table {
-	max-width: 910px;
+	max-width: 950px;
 	margin: auto;
 	padding-inline: 16px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
 }
 .table__item {
+	margin-top: 8px;
 	display: flex;
 	flex-direction: column;
 	row-gap: 5px;

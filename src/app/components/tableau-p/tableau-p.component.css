@@ -60,6 +60,11 @@ form .input-box span.details {
 .user-details .input-box input:valid {
   border-color: #ffa500;
 }
+.search{
+  margin-bottom: 2px;
+  margin-left: 3px;
+
+}
 
 form .button input {
   height: 50px;

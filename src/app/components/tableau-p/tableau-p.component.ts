@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { ProfService } from 'src/app/ProfService.service';
@@ -10,8 +10,10 @@ import { ProfService } from 'src/app/ProfService.service';
   styleUrls: ['./tableau-p.component.css']
 })
 export class TableauPComponent {
+   searchText:any;
   title = 'profdashboard';
-
+  alert: boolean = false;
+  registerF!: FormGroup;
   profDetails = null as any;
   profToUpdate = {
     nom :"",
@@ -22,23 +24,32 @@ export class TableauPComponent {
   }
  
 
-  constructor(private profService: ProfService , private toastr:ToastrService , dialog:MatDialog) {
+  constructor(private profService: ProfService , private toastr:ToastrService ,private dialog:MatDialog,private formBuilder: FormBuilder ){
     this.getProfDetails();
   }
+  ngOnInit() {
+    this.registerF = this.formBuilder.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+      })
+  }
 
-  registerProf(registerForm: NgForm) {
-    this.profService.registerProf(registerForm.value).subscribe(
-      (resp) => {
-        console.log(resp);
-        registerForm.reset();
-        this.getProfDetails();
-        this.toastr.success("Votre inscription est bien enregistré");
-      },
-      (err) => {
-        console.log(err);
-        this.toastr.error("Erreur dans votre inscription. Veuillez réessayer");
-      }
-    );
+  registerProf() {
+    if (this.registerF.valid) {
+      this.profService.registerProf(this.registerF.value).subscribe(
+        (resp) => {
+          console.log(resp);
+          this.registerF.reset();
+          this.getProfDetails();
+          this.alert = true;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+    }
   }
 
   getProfDetails() {
@@ -52,7 +63,6 @@ export class TableauPComponent {
       }
     );
   }
-
 
   deleteProf(prof: any) {
     this.profService.deleteProf(prof.mat).subscribe(
@@ -70,6 +80,9 @@ export class TableauPComponent {
 
   edit(prof: any){
     this.profToUpdate = prof;
+  }
+  supp(prof:any){
+    this.profToUpdate=prof;
   }
 
   updateProf(){
