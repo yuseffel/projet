@@ -89,49 +89,49 @@
                 <h5 class="modal-title" id="exampleModalLabel">Mise à jour d'un étudiant</h5>
               </div>
               <div class="modal-body">
-                <form [formGroup]="registerF" (ngSubmit)="updateStudent()">
+                <form [formGroup]="updateF" (ngSubmit)="updateStudent()">
                   <div class="form-group">
                     <label for="nom">Nom *</label>
                     <input type="text"  #nom [(ngModel)]="studentToUpdate.nom" name="nom" id="nom"
                       class="form-control" placeholder="Entrer votre Nom" formControlName="nom" id="nom" name="nom">
-                      <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
+                      <small class="form-text text-muted" *ngIf="updateF.get('nom')?.touched && updateF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
                   </div>
                   <div class="form-group">
                     <label for="prenom">Prénom *</label>
                     <input type="text" #prenom [(ngModel)]="studentToUpdate.prenom" name="prenom" id="name" class="form-control"
                       placeholder="Entrer votre Prenom" formControlName="prenom">
-                      <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
+                      <small class="form-text text-muted" *ngIf="updateF.get('prenom')?.touched && updateF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
                   </div>
                   <div class="form-group">
                     <label for="num">Numéro Apogée *</label>
                     <input type="number" #num [(ngModel)]="studentToUpdate.num" name="num" id="num" class="form-control"
-                      placeholder="Entrer votre Numéro Apogée " formControlName="num" [class.is-invalid]="registerF.get('num')?.touched && registerF.get('num')?.errors?.sixDigits">
-                      <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && (registerF.get('num')?.errors?.huitDigits || registerF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
+                      placeholder="Entrer votre Numéro Apogée " formControlName="num" [class.is-invalid]="updateF.get('num')?.touched && updateF.get('num')?.errors?.sixDigits">
+                      <small class="form-text text-muted" *ngIf="updateF.get('num')?.touched && (updateF.get('num')?.errors?.huitDigits || updateF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
                   </div>
                   <div class="form-group">
                     <label for="email">Email *</label>
                     <input type="email" #email [(ngModel)]="studentToUpdate.email" name="email" id="email" class="form-control"
                      placeholder="Entrer votre Email"formControlName="email"
                      pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
-                   <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
-                   <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
+                   <small class="form-text text-muted" *ngIf="updateF.get('email')?.touched && updateF.get('email')?.invalid && !updateF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
+                   <small class="form-text text-muted" *ngIf="updateF.get('email')?.touched && updateF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
                   </div>
                   <div class="form-group">
                     <label for="motdepasse">Mot de passe *</label>
                     <input type="password" #motdepasse [(ngModel)]="studentToUpdate.motdepasse" name="motdepasse" id="motdepasse"
                       class="form-control" placeholder="Entrer votre Mot de passe" formControlName="motdepasse">
-                      <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
+                      <small class="form-text text-muted" *ngIf="updateF.get('motdepasse')?.touched && updateF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
                   </div>
                   <div class="form-group">
                     <label for="cfmotpasse">Confirmer mot de passe *</label>
                     <input type="password" #cfmotpasse [(ngModel)]="studentToUpdate.cfmotpasse" name="cfmotpasse" id="cfmotpasse"
                       class="form-control" placeholder="Confirmer votre Mot de passe" formControlName="cfmotpasse">
-                      <small class="form-text text-muted" *ngIf="registerF.get('cfmotpasse')?.touched && registerF.get('cfmotpasse')?.invalid" style="color: red !important;">Confirmer mot de passe est requis.</small>
-                      <small class="form-text text-muted" *ngIf="registerF.hasError('passwordMismatch')" style="color: red !important;">Le mot de passe et la confirmation du mot de passe ne correspondent pas.</small>
+                      <small class="form-text text-muted" *ngIf="updateF.get('cfmotpasse')?.touched && updateF.get('cfmotpasse')?.invalid" style="color: red !important;">Confirmer mot de passe est requis.</small>
+                      <small class="form-text text-muted" *ngIf="updateF.hasError('passwordMismatch')" style="color: red !important;">Le mot de passe et la confirmation du mot de passe ne correspondent pas.</small>
                   </div>
                   <div class="modal-footer">                    
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    <input type="submit" data-bs-dismiss="modal" [disabled]="!registerF.valid" value="Modifier" class="btn btn-warning">
+                    <input type="submit" data-bs-dismiss="modal" [disabled]="!updateF.valid" value="Modifier" class="btn btn-warning">
                   </div>
                 </form>
               </div>

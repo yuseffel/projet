@@ -14,6 +14,7 @@ export class TableauPComponent {
   title = 'profdashboard';
   alert: boolean = false;
   registerF!: FormGroup;
+  updateF!:FormGroup;
   profDetails = null as any;
   profToUpdate = {
     nom :"",
@@ -34,6 +35,13 @@ export class TableauPComponent {
       email: ['', Validators.compose([Validators.required, Validators.email])],
       motdepasse: ['', Validators.required],
       })
+
+      this.updateF = this.formBuilder.group({
+        nom: ['', Validators.required],
+        prenom: ['', Validators.required],
+        email: ['', Validators.compose([Validators.required, Validators.email])],
+        motdepasse: ['', Validators.required],
+        })
   }
 
   registerProf() {

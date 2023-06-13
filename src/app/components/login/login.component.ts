@@ -15,12 +15,12 @@ import { MPOublierComponent } from '../mpoublier/mpoublier.component';
 })
 export class LoginComponent implements OnInit {
    student: Student = new Student();
-   registerF!: FormGroup;
+   loginEF!: FormGroup;
 
   constructor(private studentService :StudentService, private toastr:ToastrService, private router:Router,private dialog:MatDialog,private formBuilder: FormBuilder){}
 
   ngOnInit() {
-    this.registerF = this.formBuilder.group({
+    this.loginEF = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       motdepasse: ['', Validators.required],
   })

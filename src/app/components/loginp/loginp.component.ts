@@ -13,13 +13,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginpComponent {
   prof: Prof = new Prof();
-  registerF!: FormGroup;
+  loginPF!: FormGroup;
 
   constructor(private profService :ProfService, private toastr:ToastrService,private router:Router,private formBuilder: FormBuilder){
   }
 
   ngOnInit() {
-    this.registerF = this.formBuilder.group({
+    this.loginPF = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       motdepasse: ['', Validators.required],
   })

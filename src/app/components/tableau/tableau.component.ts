@@ -17,6 +17,7 @@ export class TableauComponent {
   alert: boolean = false;
   students: Student[] = [];
   registerF !: FormGroup;
+  updateF!: FormGroup;
   studentDetails = null as any;
   studentToUpdate = {
     nom :"",
@@ -32,6 +33,15 @@ export class TableauComponent {
   }
   ngOnInit() {
     this.registerF = this.formBuilder.group({
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      num: ['', Validators.compose([Validators.required, validateNumApogee])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+      cfmotpasse: ['', Validators.required],
+    },{ validator: this.passwordMatchValidator() })
+
+    this.updateF = this.formBuilder.group({
       nom: ['', Validators.required],
       prenom: ['', Validators.required],
       num: ['', Validators.compose([Validators.required, validateNumApogee])],

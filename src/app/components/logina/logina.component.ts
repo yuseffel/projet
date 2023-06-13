@@ -12,13 +12,13 @@ import { Admin } from 'src/app/admin';
 })
 export class LoginaComponent {
   admin: Admin = new Admin();
-  registerF!: FormGroup;
+  loginAF!: FormGroup;
 
   constructor(private adminService :AdminService, private toastr:ToastrService,private router:Router,private formBuilder: FormBuilder){
   }
 
   ngOnInit() {
-    this.registerF = this.formBuilder.group({
+    this.loginAF = this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, Validators.email])],
       motdepasse: ['', Validators.required],
   })
