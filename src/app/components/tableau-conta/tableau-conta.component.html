@@ -31,7 +31,7 @@
               <td>{{contact.num}}</td>
               <td>{{contact.email}}</td>
               <td>{{contact.message}}</td>
-              <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" data-bs-target="#exampleModal0">Supprimer</button></td>
+              <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" (click)="supp(contact)" data-bs-target="#exampleModal0">Supprimer</button></td>
             </tr>
           </tbody>
         </table>
@@ -41,14 +41,13 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel1">Suppression d'un message</h5>
-              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              </button>
             </div>
             <div class="modal-body1">
-              <form  *ngFor="let contact of contactDetails">
-                Est-ce que vous êtes sûre?
-                <div class="form-group">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)=" deleteContact(contact)">Supprimer</button>
+              <form form  (ngSubmit)="deleteContact()">
+                     <p> Est-ce que vous êtes sûre?</p>
+                <div class="modal-footer">                    
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  <input position="center" data-bs-dismiss="modal" type="submit" value="Supprimer" class="btn btn-danger">
                 </div>
               </form>
             </div>             

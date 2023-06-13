@@ -64,8 +64,8 @@ export class TableauPComponent {
     );
   }
 
-  deleteProf(prof: any) {
-    this.profService.deleteProf(prof.mat).subscribe(
+  deleteProf() {
+    this.profService.deleteProf(this.profDetails.mat).subscribe(
       (resp) => {
         console.log(resp);
         this.getProfDetails();
@@ -77,12 +77,12 @@ export class TableauPComponent {
       }
     );
   }
-
+  
   edit(prof: any){
     this.profToUpdate = prof;
   }
   supp(prof:any){
-    this.profToUpdate=prof;
+    this.profDetails=prof;
   }
 
   updateProf(){

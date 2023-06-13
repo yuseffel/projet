@@ -70,8 +70,8 @@ export class TableauComponent {
   }
 
 
-  deleteStudent(student: any) {
-    this.studentService.deleteStudent(student.num).subscribe(
+  deleteStudent() {
+    this.studentService.deleteStudent(this.studentDetails.num).subscribe(
       (resp) => {
         console.log(resp);
         this.getStudentsDetails();
@@ -86,6 +86,9 @@ export class TableauComponent {
 
   edit(student: any){
     this.studentToUpdate = student;
+  }
+  supp(student:any){
+    this.studentDetails=student;
   }
 
   updateStudent(){

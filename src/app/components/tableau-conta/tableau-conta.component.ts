@@ -26,8 +26,12 @@ export class TableauContaComponent {
     );
   }
 
-  deleteContact(contact: any) {
-    this.contactService.deleteContact(contact.id).subscribe(
+  supp(contact:any){
+  this.contactDetails=contact;
+  }
+
+  deleteContact() {
+    this.contactService.deleteContact(this.contactDetails.id).subscribe(
       (resp) => {
         console.log(resp);
         this.getContactDetails();
