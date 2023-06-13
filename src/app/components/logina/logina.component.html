@@ -12,17 +12,19 @@
   <body>
       <div class="wrapper">
         <div class="title">Se connecter</div>
-        <form #loginform="ngForm" (ngSubmit)="loginAdmin()" action="#">
+        <form [formGroup]="registerF" (ngSubmit)="loginAdmin()" action="#">
           <div class="field">
-            <input type="email" [(ngModel)]="admin.email" id="email" name="email" >
-            <label>Adresse email</label>
+            <input type="email" [(ngModel)]="admin.email" id="email" name="email" formControlName="email">
+          <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
+            <label>Adresse email *</label>
           </div>
           <div class="field">
-            <input type="password" [(ngModel)]="admin.motdepasse" id="motdepasse" name="motdepasse" >
-            <label>Mot de passe</label>
+            <input type="password" [(ngModel)]="admin.motdepasse" id="motdepasse" name="motdepasse" formControlName="motdepasse">
+            <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
+            <label>Mot de passe *</label>
           </div>
           <div class="field">
-            <input type="submit" value="Se Connecter">
+            <input type="submit" [disabled]="!registerF.invalid" value="Se Connecter">
           </div>
         </form>
       </div>

@@ -11,12 +11,10 @@ import { LoginpComponent } from './components/loginp/loginp.component';
 import { TableauPComponent } from './components/tableau-p/tableau-p.component';
 import { MPOublierComponent } from './components/mpoublier/mpoublier.component';
 import { C1filliersComponent } from './components/c1filliers/c1filliers.component';
-import { EspaceaComponent } from './components/espacea/espacea.component';
 import { LoginaComponent } from './components/logina/logina.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
-import { Navbar3Component } from './components/navbar3/navbar3.component';
 
 
 
@@ -25,20 +23,18 @@ const routes: Routes = [
 
   {path:'', component:AcceuilComponent,pathMatch:'full'},
   {path: 'filieres', component: FilieresComponent},
-  {path:'login', component:LoginComponent},
+  {path:'connexionEtudiant', component:LoginComponent},
   {path:'contact', component:ContactComponent},
-  {path:'registrer', component:RegistrerComponent},
-  {path:'tableau',component:TableauComponent},
-  {path:'cfilieres',component:CFilieresComponent},
-  {path:'loginp',component:LoginpComponent},
-  {path:'tableaup',component:TableauPComponent},
-  {path:'mpoublier',component:MPOublierComponent},
-  {path:'c1filieres',component:C1filliersComponent},
-  {path :'espacea',component:EspaceaComponent},
-  {path:'logina', component:LoginaComponent},
-  {path:'tableaucontac', component:TableauContaComponent},
+  {path:'registrerEtudiant', component:RegistrerComponent},
+  {path:'listeEtudiant',component:TableauComponent},
+  {path:'choixFilieres',component:CFilieresComponent},
+  {path:'connexionProf',component:LoginpComponent},
+  {path:'listeProf',component:TableauPComponent},
+  {path:'motDePasseOublier',component:MPOublierComponent},
+  {path:'choixdesFilieres',component:C1filliersComponent},
+  {path:'connexionAdmin', component:LoginaComponent},
+  {path:'listeMessage', component:TableauContaComponent},
   {path:'semestre', component:SemestreComponent},
-  {path:'navbar3', component:Navbar3Component},
  
   
 ];

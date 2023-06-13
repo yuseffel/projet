@@ -23,7 +23,6 @@ import { TableauPComponent } from './components/tableau-p/tableau-p.component';
 import { MPOublierComponent } from './components/mpoublier/mpoublier.component';
 import { LoginaComponent } from './components/logina/logina.component';
 import { C1filliersComponent } from './components/c1filliers/c1filliers.component';
-import { EspaceaComponent } from './components/espacea/espacea.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 import { Navbar3Component } from './components/navbar3/navbar3.component';
@@ -50,7 +49,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MPOublierComponent,
     LoginaComponent,
     C1filliersComponent,
-    EspaceaComponent,
     Navbar2Component,
     TableauContaComponent,
     Navbar3Component,

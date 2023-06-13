@@ -21,17 +21,17 @@
         </div>
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Nom</span>
+            <span class="details">Nom *</span>
             <input type="text" placeholder="Entrer votre nom" formControlName="nom">
             <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
           </div>
           <div class="input-box">
-            <span class="details">Prénom</span>
+            <span class="details">Prénom *</span>
             <input type="text" placeholder="Entrer votre prénom" formControlName="prenom">
             <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
           </div>
           <div class="input-box">
-            <span class="details">Email</span>
+            <span class="details">Email *</span>
             <input type="email" placeholder="Entrer votre email instituel" formControlName="email"
               pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
             <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
@@ -39,28 +39,26 @@
           </div>
           
           <div class="input-box">
-            <span class="details">Numéro apogée</span>
+            <span class="details">Numéro apogée *</span>
             <input type="number" placeholder="Entrer votre numéro apogée" formControlName="num" [class.is-invalid]="registerF.get('num')?.touched && registerF.get('num')?.errors?.sixDigits">
             <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && (registerF.get('num')?.errors?.huitDigits || registerF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
           </div>
           <div class="input-box">
-            <span class="details">Mot de passe</span>
+            <span class="details">Mot de passe *</span>
             <input type="password" placeholder="Entrer votre mot de passe" formControlName="motdepasse">
             <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
           </div>
           <div class="input-box">
-            <span class="details">Confirmer mot de passe</span>
+            <span class="details">Confirmer mot de passe *</span>
             <input type="password" placeholder="Confirmer votre mot de passe" formControlName="cfmotpasse">
             <small class="form-text text-muted" *ngIf="registerF.get('cfmotpasse')?.touched && registerF.get('cfmotpasse')?.invalid" style="color: red !important;">Confirmer mot de passe est requis.</small>
             <small class="form-text text-muted" *ngIf="registerF.hasError('passwordMismatch')" style="color: red !important;">Le mot de passe et la confirmation du mot de passe ne correspondent pas.</small>
-          </div>
-          
-          
+          </div>      
         </div>
         <div class="button">
-          <input type="submit" value="S'inscrire" [disabled]="registerF.invalid">
+          <input type="submit" value="S'inscrire" [disabled]="!registerF.invalid">
         </div>
-        <div class="signup-link"><a routerLink="/login">Se connecter</a></div>
+        <div class="signup-link"><a routerLink="/connexionEtudiant">Se connecter</a></div>
       </form>
       
     </div>

@@ -12,20 +12,22 @@
   <body>
       <div class="wrapper">
         <div class="title">Se connecter</div>
-        <form #loginform="ngForm" (ngSubmit)="loginProf()" action="#">
+        <form [formGroup]="registerF" (ngSubmit)="loginProf()" action="#">
           <div class="field">
-            <input type="email" [(ngModel)]="prof.email" id="email" name="email" >
-            <label>Adresse email</label>
+            <input type="email" [(ngModel)]="prof.email" id="email" name="email" formControlName="email">
+            <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
+            <label>Adresse email *</label>
           </div>
           <div class="field">
-            <input type="password" [(ngModel)]="prof.motdepasse" id="motdepasse" name="motdepasse" >
-            <label>Mot de passe</label>
+            <input type="password" [(ngModel)]="prof.motdepasse" id="motdepasse" name="motdepasse" formControlName="motdepasse">
+            <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
+            <label>Mot de passe *</label>
           </div>
           <div class="content">
             <div class="pass-link"><a routerLink="/mpoublier">Mot de passe oublié ?</a></div>
           </div>
           <div class="field">
-            <input type="submit" value="Se Connecter">
+            <input type="submit" [disabled]="!registerF.invalid" value="Se Connecter">
           </div>
         </form>
       </div>

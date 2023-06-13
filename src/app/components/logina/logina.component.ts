@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/AdminService';
@@ -11,12 +12,17 @@ import { Admin } from 'src/app/admin';
 })
 export class LoginaComponent {
   admin: Admin = new Admin();
+  registerF!: FormGroup;
 
-  constructor(private adminService :AdminService, private toastr:ToastrService,private router:Router){
+  constructor(private adminService :AdminService, private toastr:ToastrService,private router:Router,private formBuilder: FormBuilder){
   }
 
-  ngOnInit(): void {  
-  }
+  ngOnInit() {
+    this.registerF = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+  })
+}
 
   loginAdmin(){
     console.log(this.admin);
@@ -24,7 +30,7 @@ export class LoginaComponent {
       (resp) => {
         console.log(resp);
         this.toastr.success("Connectée avec succés");
-        this.router.navigate(['/espacea'])
+        this.router.navigate(['/listeProf'])
       },
       (err) => {
         console.log(err);

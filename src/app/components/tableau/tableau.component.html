@@ -14,34 +14,34 @@
         <form [formGroup]="registerF" (ngSubmit)="register()">
           <div class="user-details">
             <div class="input-box">
-              <span class="details">Nom :</span>
+              <span class="details">Nom *</span>
               <input type="text" placeholder="Entrer votre nom" formControlName="nom" id="nom" name="nom">
               <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Prénom :</span>
+              <span class="details">Prénom *</span>
               <input type="text" placeholder="Entrer votre prénom" name="prenom" id="prenom" formControlName="prenom">
               <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Email :</span>
+              <span class="details">Email *</span>
               <input type="email"  placeholder="Entrer votre email" name="email" id="email" formControlName="email"
               pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
             <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
             <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
             </div>
             <div class="input-box">
-              <span class="details">Numéro apogée :</span>
+              <span class="details">Numéro apogée *</span>
               <input type="number" placeholder="Entrer votre numéro apogée" name="num" id="num" formControlName="num" [class.is-invalid]="registerF.get('num')?.touched && registerF.get('num')?.errors?.sixDigits">
               <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && (registerF.get('num')?.errors?.huitDigits || registerF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Mot de passe :</span>
+              <span class="details">Mot de passe *</span>
               <input type="password" placeholder="Entrer votre mot de passe" name="motdepasse" id="motdepasse" formControlName="motdepasse">
               <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Confirmer mot de passe :</span>
+              <span class="details">Confirmer mot de passe *</span>
               <input type="password" placeholder="Confirmer votre mot de passe" name="cfmotpasse" id="cfmotpasse" formControlName="cfmotpasse">
               <small class="form-text text-muted" *ngIf="registerF.get('cfmotpasse')?.touched && registerF.get('cfmotpasse')?.invalid" style="color: red !important;">Confirmer mot de passe est requis.</small>
               <small class="form-text text-muted" *ngIf="registerF.hasError('passwordMismatch')" style="color: red !important;">Le mot de passe et la confirmation du mot de passe ne correspondent pas.</small>
@@ -92,25 +92,25 @@
               <div class="modal-body">
                 <form [formGroup]="registerF" (ngSubmit)="updateStudent()">
                   <div class="form-group">
-                    <label for="nom">Nom :</label>
+                    <label for="nom">Nom *</label>
                     <input type="text"  #nom [(ngModel)]="studentToUpdate.nom" name="nom" id="nom"
                       class="form-control" placeholder="Entrer votre Nom" formControlName="nom" id="nom" name="nom">
                       <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="prenom">Prénom :</label>
+                    <label for="prenom">Prénom *</label>
                     <input type="text" #prenom [(ngModel)]="studentToUpdate.prenom" name="prenom" id="name" class="form-control"
                       placeholder="Entrer votre Prenom" formControlName="prenom">
                       <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="num">Numéro Apogée :</label>
+                    <label for="num">Numéro Apogée *</label>
                     <input type="number" #num [(ngModel)]="studentToUpdate.num" name="num" id="num" class="form-control"
                       placeholder="Entrer votre Numéro Apogée " formControlName="num" [class.is-invalid]="registerF.get('num')?.touched && registerF.get('num')?.errors?.sixDigits">
                       <small class="form-text text-muted" *ngIf="registerF.get('num')?.touched && (registerF.get('num')?.errors?.huitDigits || registerF.get('num')?.invalid)" style="color: red !important;">Numéro apogée est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="email">Email :</label>
+                    <label for="email">Email *</label>
                     <input type="email" #email [(ngModel)]="studentToUpdate.email" name="email" id="email" class="form-control"
                      placeholder="Entrer votre Email"formControlName="email"
                      pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
@@ -118,13 +118,13 @@
                    <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
                   </div>
                   <div class="form-group">
-                    <label for="motdepasse">Mot de passe :</label>
+                    <label for="motdepasse">Mot de passe *</label>
                     <input type="password" #motdepasse [(ngModel)]="studentToUpdate.motdepasse" name="motdepasse" id="motdepasse"
                       class="form-control" placeholder="Entrer votre Mot de passe" formControlName="motdepasse">
                       <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="cfmotpasse">Confirmer mot de passe :</label>
+                    <label for="cfmotpasse">Confirmer mot de passe *</label>
                     <input type="password" #cfmotpasse [(ngModel)]="studentToUpdate.cfmotpasse" name="cfmotpasse" id="cfmotpasse"
                       class="form-control" placeholder="Confirmer votre Mot de passe" formControlName="cfmotpasse">
                       <small class="form-text text-muted" *ngIf="registerF.get('cfmotpasse')?.touched && registerF.get('cfmotpasse')?.invalid" style="color: red !important;">Confirmer mot de passe est requis.</small>
@@ -148,7 +148,7 @@
               </div>
               <div class="modal-body1">
                 <form *ngFor="let student of studentDetails">
-                  Est-ce que vous êtes sûre?
+                  Est-ce que vous êtes sûre ?
                   <div class="form-group">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteStudent(student)">Supprimer</button>
                   </div>

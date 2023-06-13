@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Prof } from 'src/app/prof';
 import { ProfService } from 'src/app/ProfService.service';
 import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-loginp',
@@ -12,12 +13,17 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginpComponent {
   prof: Prof = new Prof();
+  registerF!: FormGroup;
 
-  constructor(private profService :ProfService, private toastr:ToastrService,private router:Router){
+  constructor(private profService :ProfService, private toastr:ToastrService,private router:Router,private formBuilder: FormBuilder){
   }
 
-  ngOnInit(): void {  
-  }
+  ngOnInit() {
+    this.registerF = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+  })
+}
 
   loginProf(){
     console.log(this.prof);
@@ -25,7 +31,7 @@ export class LoginpComponent {
       (resp) => {
         console.log(resp);
         this.toastr.success("Connectée avec succés");
-        this.router.navigate(['/c1filieres'])
+        this.router.navigate(['/choixdesFilieres'])
       },
       (err) => {
         console.log(err);

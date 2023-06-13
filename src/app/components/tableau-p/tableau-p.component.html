@@ -12,22 +12,22 @@
         <form [formGroup]="registerF" (ngSubmit)="registerProf()">
           <div class="user-details">
             <div class="input-box">
-              <span class="details">Nom :</span>
+              <span class="details">Nom *</span>
               <input type="text" placeholder="Entrer votre nom" formControlName="nom" name="nom" id="nom" >
               <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Prénom :</span>
+              <span class="details">Prénom *</span>
               <input type="text" placeholder="Entrer votre prénom" formControlName="prenom" name="prenom" id="prenom">
               <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Email :</span>
+              <span class="details">Email *</span>
               <input type="email" placeholder="Entrer votre email" #email formControlName="email" name="email" id="email">
               <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
             </div>
             <div class="input-box">
-              <span class="details">Mot de passe :</span>
+              <span class="details">Mot de passe *</span>
               <input type="password" placeholder="Entrer votre mot de passe"formControlName="motdepasse" name="motdepasse" id="motdepasse">
               <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
             </div>
@@ -74,25 +74,25 @@
               <div class="modal-body">
                 <form [formGroup]="registerF" (ngSubmit)="updateProf()">
                   <div class="form-group">
-                    <label for="nom">Nom :</label>
+                    <label for="nom">Nom *</label>
                     <input type="text" formControlName="nom"  #nom [(ngModel)]="profToUpdate.nom" name="nom" id="nom"
                       class="form-control" placeholder="Entrer votre Nom">
                       <small class="form-text text-muted" *ngIf="registerF.get('nom')?.touched && registerF.get('nom')?.invalid" style="color: red !important;">Nom est requis.</small>
                   </div>                 
                   <div class="form-group">
-                    <label for="prenom">Prénom :</label>
+                    <label for="prenom">Prénom *</label>
                     <input type="text" formControlName="prenom" #prenom [(ngModel)]="profToUpdate.prenom" name="prenom" id="name" class="form-control"
                       placeholder="Entrer votre Prenom">
                       <small class="form-text text-muted" *ngIf="registerF.get('prenom')?.touched && registerF.get('prenom')?.invalid" style="color: red !important;">Prénom est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="email">Email :</label>
+                    <label for="email">Email *</label>
                     <input type="email" formControlName="email" #email [(ngModel)]="profToUpdate.email" name="email" id="email"
                       class="form-control" placeholder="Entrer votre Email">
                       <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
                   </div>
                   <div class="form-group">
-                    <label for="motdepasse">Mot de passe :</label>
+                    <label for="motdepasse">Mot de passe *</label>
                     <input type="password" formControlName="motdepasse" #motdepasse [(ngModel)]="profToUpdate.motdepasse" name="motdepasse" id="motdepasse"
                       class="form-control" placeholder="Entrer votre Mot de passe">
                       <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
@@ -115,7 +115,7 @@
               </div>
               <div class="modal-body">
                 <div *ngFor="let prof of profDetails">
-                  Est-ce que vous êtes sûre?
+                  Est-ce que vous êtes sûre ?
                   <div class="form-group">                    
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteProf(prof)" >Supprimer</button>
                   </div>

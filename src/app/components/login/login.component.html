@@ -12,22 +12,26 @@
   <body>
       <div class="wrapper">
         <div class="title">Se connecter</div>
-        <form #loginform="ngForm" (ngSubmit)="loginStudent()" action="#">
+        <form [formGroup]="registerF" (ngSubmit)="loginStudent()" action="#">
           <div class="field">
-            <input type="email" [(ngModel)]="student.email" id="email" name="email">
-            <label>Adresse email</label>
+            <input type="email" [(ngModel)]="student.email" id="email" name="email"formControlName="email"
+            pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
+          <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.invalid && !registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email est requis.</small>
+          <small class="form-text text-muted" *ngIf="registerF.get('email')?.touched && registerF.get('email')?.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
+            <label>Adresse email *</label>
           </div>
           <div class="field">
-            <input type="password" [(ngModel)]="student.motdepasse" id="motdepasse" name="motdepasse">
-            <label>Mot de passe</label>
+            <input type="password" [(ngModel)]="student.motdepasse" id="motdepasse" name="motdepasse"formControlName="motdepasse">
+            <small class="form-text text-muted" *ngIf="registerF.get('motdepasse')?.touched && registerF.get('motdepasse')?.invalid" style="color: red !important;">Mot de passe est requis.</small>
+            <label>Mot de passe *</label>
           </div>
           <div class="content">
             <div class="pass-link"(click)="handleForgetPasswordAction()">Mot de passe oublié ?</div> <!--(click)="handleForgetPasswordAction()"-->
           </div>
           <div class="field">
-            <input type="submit" value="Se Connecter">
+            <input type="submit" [disabled]="!registerF.invalid" value="Se Connecter">
           </div>
-          <div class="signup-link"> <a routerLink="/registrer">S'inscrire</a></div>
+          <div class="signup-link"> <a  routerLink="/registrerEtudiant">S'inscrire</a></div>
      
         </form>
         

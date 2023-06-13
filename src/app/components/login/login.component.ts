@@ -1,6 +1,6 @@
 import { DialogConfig } from '@angular/cdk/dialog';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Route, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -15,11 +15,16 @@ import { MPOublierComponent } from '../mpoublier/mpoublier.component';
 })
 export class LoginComponent implements OnInit {
    student: Student = new Student();
+   registerF!: FormGroup;
 
-  constructor(private studentService :StudentService, private toastr:ToastrService, private router:Router,private dialog:MatDialog){}
+  constructor(private studentService :StudentService, private toastr:ToastrService, private router:Router,private dialog:MatDialog,private formBuilder: FormBuilder){}
 
-  ngOnInit(): void {  
-  }
+  ngOnInit() {
+    this.registerF = this.formBuilder.group({
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      motdepasse: ['', Validators.required],
+  })
+}
 
   loginStudent(){
     console.log(this.student);
@@ -27,7 +32,7 @@ export class LoginComponent implements OnInit {
       (resp) => {
         console.log(resp);
         this.toastr.success("Connectée avec succés");
-        this.router.navigate(['/cfilieres'])
+        this.router.navigate(['/choixFilieres'])
       },
       (err) => {
         console.log(err);
