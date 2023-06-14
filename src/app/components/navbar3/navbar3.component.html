@@ -23,9 +23,18 @@
             <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/filieres" >FILIERES</a></li>
             <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/contact" >CONTACT</a></li>
             <li><a routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" routerLink="/" >DECONNECTION</a></li>
-        
+            <li>
+               <label for="btn-1" class="show"></label>
+               <a href="#"></a>
+               <input type="checkbox" id="btn-1">
+            </li>        
          </ul>
       </nav>
+      <script>
+         $('.icon').click(function(){
+           $('span').toggleClass("cancel");
+         });
+      </script>
      
    </body>
 </html>

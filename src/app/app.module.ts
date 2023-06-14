@@ -28,6 +28,7 @@ import { TableauContaComponent } from './components/tableau-conta/tableau-conta.
 import { Navbar3Component } from './components/navbar3/navbar3.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
 
 
 
@@ -53,6 +54,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     TableauContaComponent,
     Navbar3Component,
     SemestreComponent,
+    SemestreproComponent,
 
 
   

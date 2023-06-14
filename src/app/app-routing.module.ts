@@ -15,6 +15,7 @@ import { LoginaComponent } from './components/logina/logina.component';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
+import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'connexionAdmin', component:LoginaComponent},
   {path:'listeMessage', component:TableauContaComponent},
   {path:'semestre', component:SemestreComponent},
+  {path:'semestres',component:SemestreproComponent},
  
   
 ];
