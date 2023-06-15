@@ -36,6 +36,7 @@ import { AllFichierComponent } from './components/all-fichier/all-fichier.compon
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

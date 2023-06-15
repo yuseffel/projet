@@ -22,6 +22,7 @@ import { AllFichierComponent } from './components/all-fichier/all-fichier.compon
 
 
 
+
 const routes: Routes = [
 
   {path:'', component:AcceuilComponent,pathMatch:'full'},
@@ -40,7 +41,8 @@ const routes: Routes = [
   {path:'semestre', component:SemestreComponent},
   {path:'semestres',component:SemestreproComponent},
   {path:'ajouterdocs',component:FichierComponent},
-  {path:'tousdocs',component:AllFichierComponent}
+  {path:'tousdocs',component:AllFichierComponent},
+
  
   
 ];
