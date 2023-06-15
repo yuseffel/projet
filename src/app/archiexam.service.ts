@@ -15,7 +15,7 @@ export class ArchiexamService {
     const formData: FormData = new FormData();
     formData.append('file', file);
 
-    return this.http.post(this.apiUrl + '/uploadArchiexam', formData, {
+    return this.http.post(this.apiUrl + '/uploadArchicour', formData, {
       reportProgress: true,
       observe: 'events'
     }).pipe(
@@ -32,7 +32,7 @@ export class ArchiexamService {
   }
 
   getFiles(): Observable<any> {
-    return this.http.get<File[]>(this.apiUrl + '/archiexam');
+    return this.http.get<File[]>(this.apiUrl + '/Archiexam');
   }
 
 
@@ -53,4 +53,3 @@ export class ArchiexamService {
 
 
 }
-
