@@ -47,7 +47,7 @@ export class FichierService {
     return this.http.delete(this.apiUrl + '/deleteFile?id=' + id);
   }
 
-  public getFileDetails() {
+  public getFile() {
     return this.http.get(this.apiUrl+ '/getFiles');
   }
 

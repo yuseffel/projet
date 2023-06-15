@@ -103,7 +103,7 @@ export class FichierComponent {
   }
 
   getFileDetails() {
-    this.fileService.getFileDetails().subscribe(
+    this.fileService.getFile().subscribe(
       (resp) => {
         console.log(resp);
         this.fileDetails = resp;
