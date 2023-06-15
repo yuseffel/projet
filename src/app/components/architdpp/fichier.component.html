@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar4></app-navbar4>
+    <div class="bt">
+        <table class="tableau">
+            <tr>
+                <td><input type="file"  (change)="onFileSelected($event)" class="form-control" id="customFile" /></td>
+                <td><button data-bs-toggle="modal"  class="btn btn-warning" data-bs-target="#exampleModal" >Ajouter</button></td>   
+            </tr>           
+        </table>  
+        <input style="margin-bottom: 2px; margin-top: 3px; margin-left: 1%;" class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher document ">
+        
+      </div>  
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter un document</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <p style="text-indent: 30px; font-size: large;"> Est-ce que vous êtes sûre ? </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button class="btn btn-warning" (click)="uploadFile()" onclick="window.location.reload()" data-bs-dismiss="modal">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Installer</th>
+                <th>Supprimer</th>              
+              </tr>
+            </thead>
+            <tbody class="tbody" >
+              <tr *ngFor="let file of files | filter:searchText" >
+                <td>{{ file.filename }}</td>
+                <td>{{ file.contentType }}</td>
+                <td><button class="btn btn-warning" type="button" (click)="downloadFile(file.id)" >Download</button></td>
+                <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="supp(file)">Supprimer</button></td>
+              </tr>
+            </tbody>
+          </table>
+ 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel1">Suppression d'un document</h5>
+                </div>
+                <div class="modal-body1">
+                  <form  (ngSubmit)="deleteFile()">
+                         <p style="text-indent: 30px; font-size: large;"> Est-ce que vous êtes sûre ? </p>
+                    <div class="modal-footer">                    
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                      <input position="center" data-bs-dismiss="modal" onclick="window.location.reload()" type="submit" value="Supprimer" class="btn btn-danger">
+                    </div>
+                  </form>
+                </div>             
+              </div>
+            </div>
+          </div>  
+    
+</body>
+</html>

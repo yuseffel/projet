@@ -1,0 +1,26 @@
+.bt {
+    margin-bottom: 5px;
+    margin-top: 2%;
+  }
+  body{
+    background: linear-gradient(135deg, rgb(121, 120, 120), #f0b851);
+  }
+
+  button {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .tableau{
+    margin-left: 1%;
+  }
+
+
+  td{
+    background-color: white;
+  }
+  tr{
+    background-color: #FFA500;
+  }
+  

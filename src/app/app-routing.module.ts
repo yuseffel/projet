@@ -18,6 +18,12 @@ import { SemestreComponent } from './components/semestre/semestre.component';
 import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
 import { FichierComponent } from './components/fichier/fichier.component';
 import { AllFichierComponent } from './components/all-fichier/all-fichier.component';
+import { ArchicourComponent } from './components/archicour/archicour.component';
+import { ArchitdpComponent } from './components/architdp/architdp.component';
+import { ArchiexamenComponent } from './components/archiexamen/archiexamen.component';
+import { ArchicourpComponent } from './components/archicourp/archicourp.component';
+import { ArchitdppComponent } from './components/architdpp/architdpp.component';
+import { ArchiexamenpComponent } from './components/archiexamenp/archiexamenp.component';
 
 
 
@@ -42,8 +48,12 @@ const routes: Routes = [
   {path:'semestres',component:SemestreproComponent},
   {path:'ajouterdocs',component:FichierComponent},
   {path:'tousdocs',component:AllFichierComponent},
-
- 
+  {path:'archicour',component:ArchicourComponent},
+  {path:'architdp',component:ArchitdpComponent},
+  {path:'archiexam',component:ArchiexamenComponent},
+  {path:'archicourp',component:ArchicourpComponent},
+  {path:'architdpp',component:ArchitdppComponent},
+  {path:'archiexamp',component:ArchiexamenpComponent},
   
 ];
 

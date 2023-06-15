@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(135deg, rgb(121, 120, 120), #f0b851);
+  }
+  td{
+    background-color: white;
+  }
+  tr{
+    background-color: #FFA500;
+  }

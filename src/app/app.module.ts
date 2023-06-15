@@ -31,6 +31,14 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
 import { FichierComponent } from './components/fichier/fichier.component';
 import { AllFichierComponent } from './components/all-fichier/all-fichier.component';
+import { ArchicourComponent } from './components/archicour/archicour.component';
+import { ArchitdpComponent } from './components/architdp/architdp.component';
+import { ArchiexamenComponent } from './components/archiexamen/archiexamen.component';
+import { Navbar4Component } from './components/navbar4/navbar4.component';
+import { ArchiexamenpComponent } from './components/archiexamenp/archiexamenp.component';
+import { ArchitdppComponent } from './components/architdpp/architdpp.component';
+import { ArchicourpComponent } from './components/archicourp/archicourp.component';
+import { Navbar5Component } from './components/navbar5/navbar5.component';
 
 
 
@@ -60,6 +68,14 @@ import { AllFichierComponent } from './components/all-fichier/all-fichier.compon
     SemestreproComponent,
     FichierComponent,
     AllFichierComponent,
+    ArchicourComponent,
+    ArchitdpComponent,
+    ArchiexamenComponent,
+    Navbar4Component,
+    ArchiexamenpComponent,
+    ArchitdppComponent,
+    ArchicourpComponent,
+    Navbar5Component,
  
 
 
