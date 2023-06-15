@@ -16,6 +16,8 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { TableauContaComponent } from './components/tableau-conta/tableau-conta.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
 import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
+import { FichierComponent } from './components/fichier/fichier.component';
+import { AllFichierComponent } from './components/all-fichier/all-fichier.component';
 
 
 
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path:'listeMessage', component:TableauContaComponent},
   {path:'semestre', component:SemestreComponent},
   {path:'semestres',component:SemestreproComponent},
+  {path:'ajouterdocs',component:FichierComponent},
+  {path:'tousdocs',component:AllFichierComponent}
  
   
 ];

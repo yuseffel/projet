@@ -29,6 +29,8 @@ import { Navbar3Component } from './components/navbar3/navbar3.component';
 import { SemestreComponent } from './components/semestre/semestre.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SemestreproComponent } from './components/semestrepro/semestrepro.component';
+import { FichierComponent } from './components/fichier/fichier.component';
+import { AllFichierComponent } from './components/all-fichier/all-fichier.component';
 
 
 
@@ -55,6 +57,9 @@ import { SemestreproComponent } from './components/semestrepro/semestrepro.compo
     Navbar3Component,
     SemestreComponent,
     SemestreproComponent,
+    FichierComponent,
+    AllFichierComponent,
+ 
 
 
   
