@@ -11,9 +11,11 @@
         <table class="tableau">
             <tr>
                 <td><input type="file"  (change)="onFileSelected($event)" class="form-control" id="customFile" /></td>
-                <td><button data-bs-toggle="modal"  class="btn btn-warning" data-bs-target="#exampleModal" >Ajouter</button></td>
-            </tr>          
-        </table>      
+                <td><button data-bs-toggle="modal"  class="btn btn-warning" data-bs-target="#exampleModal" >Ajouter</button></td>   
+            </tr>           
+        </table>  
+        <input style="margin-bottom: 2px; margin-top: 3px; margin-left: 1%;" class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher document ">
+        
       </div>  
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,7 +46,7 @@
               </tr>
             </thead>
             <tbody class="tbody" >
-              <tr *ngFor="let file of files" >
+              <tr *ngFor="let file of files | filter:searchText" >
                 <td>{{ file.filename }}</td>
                 <td>{{ file.contentType }}</td>
                 <td><button class="btn btn-warning" type="button" (click)="downloadFile(file.id)" >Download</button></td>

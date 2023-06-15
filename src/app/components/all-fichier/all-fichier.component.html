@@ -8,6 +8,7 @@
 <body>
 
     <app-navbar3></app-navbar3>
+    <input style="margin-bottom: 2px; margin-top: 5%; margin-left: 1%;" class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher document ">
 <table class="table table-bordered">
     <thead>
       <tr>
@@ -18,7 +19,7 @@
       </tr>
     </thead>
     <tbody class="tbody" >
-      <tr *ngFor="let file of files" >
+      <tr *ngFor="let file of files| filter:searchText" >
         <td>{{ file.filename }}</td>
         <td>{{ file.contentType }}</td>
         <td><button class="btn btn-warning" type="button" (click)="downloadFile(file.id)">Download</button></td>

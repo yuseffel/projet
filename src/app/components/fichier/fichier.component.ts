@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./fichier.component.css']
 })
 export class FichierComponent {
+  searchText:any;
   selectedFile: File | null = null;
   uploadProgress!: number;
   fileDetails = null as any;

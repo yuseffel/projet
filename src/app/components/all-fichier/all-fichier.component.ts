@@ -10,6 +10,7 @@ import { FichierService } from 'src/app/fichier.service';
   styleUrls: ['./all-fichier.component.css']
 })
 export class AllFichierComponent {
+  searchText:any;
   files: any = [];
 
   constructor(private fileService: FichierService) { }
