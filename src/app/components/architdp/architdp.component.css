@@ -11,3 +11,10 @@ body {
   tr{
     background-color: #FFA500;
   }
+
+  .mt-0{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0;
+
+}

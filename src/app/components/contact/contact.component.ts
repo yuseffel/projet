@@ -51,9 +51,7 @@ export class ContactComponent {
       }
     );
   }
-  emailFormatValidator(): Validators {
-    return Validators.pattern(/^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$/);
-  }
+
 
 
 }

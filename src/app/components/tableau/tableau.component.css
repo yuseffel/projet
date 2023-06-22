@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+.mt-5{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
 
+}
 body {
   background: linear-gradient(135deg, rgb(121, 120, 120), #f0b851);
 }

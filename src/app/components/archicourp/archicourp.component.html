@@ -7,15 +7,21 @@
 </head>
 <body>
     <app-navbar5></app-navbar5>
-    <div class="bt">
+    <div class="bt" style="margin-top: 5%;">
         <table class="tableau">
             <tr>
-                <td><input type="file"  (change)="onFileSelected($event)" class="form-control" id="customFile" /></td>
+                <td><input type="file" (change)="onFileSelected($event)" class="form-control" id="customFile" /></td>
                 <td><button data-bs-toggle="modal"  class="btn btn-warning" data-bs-target="#exampleModal" >Ajouter</button></td>   
             </tr>           
-        </table>  
-        <input style="margin-bottom: 2px; margin-top: 3px; margin-left: 1%;" class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher document ">
-        
+        </table>
+         <div class="mt-5">
+          <div class="input-group rounded" style="margin-bottom: 5px; margin-left: 49%; width: 50%;margin-top: 10px;margin-top: -5.5%;">
+            <input type="search"  name="search"  [(ngModel)]="searchText" class="form-control rounded" placeholder="Chercher document" aria-label="Search" aria-describedby="search-addon" />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="fas fa-search" ></i>
+            </span>
+          </div>
+        </div>      
       </div>  
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -36,24 +42,26 @@
           </div>
         </div>
 
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Nom</th>
-                <th>Type</th>
-                <th>Installer</th>
-                <th>Supprimer</th>              
-              </tr>
-            </thead>
-            <tbody class="tbody" >
-              <tr *ngFor="let file of files | filter:searchText" >
-                <td>{{ file.filename }}</td>
-                <td>{{ file.contentType }}</td>
-                <td><button class="btn btn-warning" type="button" (click)="downloadFile(file.id)" >Download</button></td>
-                <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="supp(file)">Supprimer</button></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="mt-0">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Type</th>
+                  <th>Télécharger</th>
+                  <th>Supprimer</th>              
+                </tr>
+              </thead>
+              <tbody class="tbody" >
+                <tr *ngFor="let file of files | filter:searchText" >
+                  <td>{{ file.filename }}</td>
+                  <td>{{ file.contentType }}</td>
+                  <td><button class="btn btn-warning" type="button" (click)="downloadFile(file.id)" >Télécharger</button></td>
+                  <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="supp(file)">Supprimer</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
  
         <!-- Modal -->
         <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">

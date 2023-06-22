@@ -11,16 +11,23 @@
     </header>
     <main>
     <div class="mt-5">
-      <input  class="search" type="text" name="search" [(ngModel)]="searchText" placeholder="Chercher message ">
+      <div class="input-group rounded" style="margin-bottom: 5px; margin-left: 4px; width: 50%;">
+        <input type="search"  name="search"  [(ngModel)]="searchText" class="form-control rounded" placeholder="Chercher message" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search" ></i>
+        </span>
+      </div>
         <table class="table table-bordered">
           <thead>
             <tr>
               <th>Nom</th>
               <th>Prenom</th>
-              <th>Numéro Apogée</th>
+              <th>Numéro téléphone</th>
               <th>Email</th>
               <th>Message</th>
+              <th>Répondre</th>
               <th>Supprimer</th>
+              
               
             </tr>
           </thead>
@@ -31,6 +38,7 @@
               <td>{{contact.num}}</td>
               <td>{{contact.email}}</td>
               <td>{{contact.message}}</td>
+              <td><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"><input  type="submit" value="Répondre" class="btn btn-warning"></a></td>
               <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" (click)="supp(contact)" data-bs-target="#exampleModal0">Supprimer</button></td>
             </tr>
           </tbody>

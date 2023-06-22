@@ -59,9 +59,11 @@ export class TableauComponent {
           this.registerF.reset();
           this.getStudentsDetails();
           this.alert = true;
+          this.toastr.success("Ajouter avec succés");
         },
         (err) => {
           console.log(err);
+          this.toastr.error("Erreur d'ajout");
         }
       );
     }

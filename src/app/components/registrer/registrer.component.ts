@@ -58,9 +58,11 @@ export class RegistrerComponent {
           this.registerF.reset();
           this.getStudentsDetails();
           this.alert = true;
+          this.toastr.success("Inscription réaliser avec succés");
         },
         (err) => {
           console.log(err);
+          this.toastr.error("Erreur dans votre inscription .Verifiez-vous les informations entrer ")
         }
       );
     }
@@ -78,34 +80,7 @@ export class RegistrerComponent {
     );
   }
 
-  deleteStudent(student: any) {
-    this.studentService.deleteStudent(student.rollNumber).subscribe(
-      (resp) => {
-        console.log(resp);
-        this.getStudentsDetails();
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-
-  edit(student: any) {
-    this.studentToUpdate = student;
-  }
-
-  updateStudent() {
-    this.studentService.updateStudents(this.studentToUpdate).subscribe(
-      (resp) => {
-        console.log(resp);
-        this.getStudentsDetails();
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
-  }
-  
+ 
   passwordMatchValidator(): any {
     return (formGroup: FormGroup) => {
       const passwordControl = formGroup.get('motdepasse');

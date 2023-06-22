@@ -26,13 +26,26 @@ export class StudentService {
   public updateStudents(student: any) {
     return this.http.put(this.API + '/updateStudents', student);
   }
+  public updatePassword(student: any) {
+    return this.http.put(this.API + '/updatePassword', student);
+  }
   public loginStudentFromRemote(student: Student):Observable<any>{
     console.log(student)
    return this.http.post(this.API + '/login', student);
  }
- public motdepasseoublier(data: any) {
-  return this.http.post(this.API + '/moubliermotdepasse', data);
-}
+
+
+  checkToken(): Observable<any> {
+    return this.http.get(`${this.API}/checkToken`);
+  }
+
+  public motdepasseoublier(data: any) {
+    return this.http.post(this.API + '/oubliermotdepasse ', data);
+  }
+
+  public changemotdepasse(data: any) {
+    return this.http.post(this.API + '/changemotdepasse', data);
+  }
 
 
 }

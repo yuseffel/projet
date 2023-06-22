@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { StudentService } from 'src/app/StudentService.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader'
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-mpoublier',
@@ -13,7 +14,7 @@ export class MPOublierComponent implements OnInit {
   motdepasseoublierForm:any = FormGroup;
   responseMessage:any;
 
-  constructor(private formBuilder:FormBuilder,private studentService :StudentService,private ngxService:NgxUiLoaderService){}
+  constructor(private formBuilder:FormBuilder,private studentService :StudentService,private ngxService:NgxUiLoaderService,private toastr:ToastrService){}
 
   ngOnInit(): void {
     this.motdepasseoublierForm = this.formBuilder.group({
@@ -33,9 +34,12 @@ export class MPOublierComponent implements OnInit {
       this.ngxService.stop();
       if(error.error?.message){
         this.responseMessage = error.error?.message;
+        this.toastr.error("Erreur d'envoyer le message");
       }
       else{
           this.responseMessage = "Error";
+          this.toastr.success("Message envoyer avec succés");
+          
       }
 
     })

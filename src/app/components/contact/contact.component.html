@@ -37,16 +37,14 @@
                 <small class="form-text text-muted" *ngIf="email.touched && !email.valid" style="color: red !important;">Email est requis.</small>
                 </div>-->
                 <div class="col-lg-6">
-                <input ngModel type="text" #email="ngModel" name="email" id="email" placeholder="Email instituel *" required
-                pattern="^[a-zA-Z0-9._%+-]+@\etu\.uae\.ac\.ma$">
+                <input ngModel type="text" #email="ngModel" name="email" id="email" placeholder="Email *" required>
               <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['required']" style="color: red !important;">Email est requis.</small>
               <small class="form-text text-muted" *ngIf="email.touched && email.errors?.['pattern']" style="color: red !important;">Email invalide.</small>
             </div>
                 
-                 <!--***********************************-->
                 <div class="col-lg-6">
-                <input ngModel type="number" #num="ngModel" name="num" id="num" placeholder="Numéro apogée *" required>
-                <small class="form-text text-muted" *ngIf="num.touched && !num.valid" style="color: red !important;">Numero apogée est requis.</small>
+                <input ngModel type="number" #num="ngModel" name="num" id="num" placeholder="Numéro téléphone *" required>
+                <small class="form-text text-muted" *ngIf="num.touched && (num.errors?.dixtDigits || num.invalid)" style="color: red !important;">Numéro téléphone est requis.</small>
                 </div>
                 <div >
                 <textarea ngModel type="text" #message="ngModel" name="message"  id="message" placeholder="Votre message *" required></textarea>

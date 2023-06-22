@@ -55,6 +55,7 @@ const routes: Routes = [
   {path:'architdpp',component:ArchitdppComponent},
   {path:'archiexamp',component:ArchiexamenpComponent},
   
+  
 ];
 
 @NgModule({

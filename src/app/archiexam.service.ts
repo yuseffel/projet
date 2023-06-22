@@ -15,7 +15,7 @@ export class ArchiexamService {
     const formData: FormData = new FormData();
     formData.append('file', file);
 
-    return this.http.post(this.apiUrl + '/uploadArchiexam', formData, {
+    return this.http.post(this.apiUrl + '/uploadArchicour', formData, {
       reportProgress: true,
       observe: 'events'
     }).pipe(

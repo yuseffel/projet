@@ -15,8 +15,12 @@
   .tableau{
     margin-left: 1%;
   }
+  .mt-0{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 0;
 
-
+}
   td{
     background-color: white;
   }
