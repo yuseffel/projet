@@ -35,16 +35,34 @@
             <tr *ngFor="let contact of contactDetails| filter:searchText">
               <td>{{contact.nom}}</td>
               <td>{{contact.prenom}}</td>
-              <td>{{contact.num}}</td>
+              <td>0{{contact.num}}</td>
               <td>{{contact.email}}</td>
               <td>{{contact.message}}</td>
-              <td><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"><input  type="submit" value="Répondre" class="btn btn-warning"></a></td>
+              <td><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to={{contact.email}}" target="_blank"><input  type="submit" value="Répondre" class="btn btn-warning"></a></td>
               <td><button mat-raised-button type="button" color="warn"  data-bs-toggle="modal" (click)="supp(contact)" data-bs-target="#exampleModal0">Supprimer</button></td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">Suppression d'un message</h5>
+            </div>
+            <div class="modal-body1">
+              <form form  (ngSubmit)="deleteContact()">
+                <p style="text-indent: 30px; font-size: large;"> Est-ce que vous êtes sûre ? </p>
+                <div class="modal-footer">                    
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  <input position="center" data-bs-dismiss="modal" type="submit" value="Supprimer" class="btn btn-danger">
+                </div>
+              </form>
+            </div>             
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
