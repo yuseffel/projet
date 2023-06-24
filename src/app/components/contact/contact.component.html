@@ -43,7 +43,7 @@
             </div>
                 
                 <div class="col-lg-6">
-                <input ngModel type="number" #num="ngModel" name="num" id="num" placeholder="Numéro téléphone *" required>
+                <input ngModel type="num" #num="ngModel" name="num" id="num" placeholder="Numéro téléphone *" required pattern="06[0-9]{8}|07[0-9]{8}">
                 <small class="form-text text-muted" *ngIf="num.touched && (num.errors?.dixtDigits || num.invalid)" style="color: red !important;">Numéro téléphone est requis.</small>
                 </div>
                 <div >
